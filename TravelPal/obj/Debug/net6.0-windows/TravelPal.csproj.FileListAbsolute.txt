@@ -48,3 +48,7 @@ C:\Users\dula8\OneDrive\Desktop\Skola\TravelPal\TravelPal\obj\Debug\net6.0-windo
 C:\Users\dula8\OneDrive\Desktop\Skola\TravelPal\TravelPal\obj\Debug\net6.0-windows\TravelPal.pdb
 C:\Users\dula8\OneDrive\Desktop\Skola\TravelPal\TravelPal\obj\Debug\net6.0-windows\TravelPal.genruntimeconfig.cache
 C:\Users\dula8\OneDrive\Desktop\Skola\TravelPal\TravelPal\obj\Debug\net6.0-windows\ref\TravelPal.dll
+C:\Users\dula8\OneDrive\Desktop\Skola\TravelPal\TravelPal\obj\Debug\net6.0-windows\AddTravelWindow.g.cs
+C:\Users\dula8\OneDrive\Desktop\Skola\TravelPal\TravelPal\obj\Debug\net6.0-windows\UserDetailsWindow.g.cs
+C:\Users\dula8\OneDrive\Desktop\Skola\TravelPal\TravelPal\obj\Debug\net6.0-windows\AddTravelWindow.baml
+C:\Users\dula8\OneDrive\Desktop\Skola\TravelPal\TravelPal\obj\Debug\net6.0-windows\UserDetailsWindow.baml

@@ -29,6 +29,23 @@ namespace TravelPal
            // cbCountry.ItemsSource = location;
 
             InitializeComponent();
+
+            
+        }
+
+        private void btnUserTravels_Click(object sender, RoutedEventArgs e)
+        {
+            UserDetailsWindow userDetailsWindow = new();
+
+            userDetailsWindow.Show();
+
+        }
+
+        private void btnAddTravel_Click(object sender, RoutedEventArgs e)
+        {
+            AddTravelWindow addTravelWindow = new();
+
+            addTravelWindow.Show();
         }
     }
 }
