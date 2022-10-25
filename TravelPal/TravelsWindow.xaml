@@ -25,42 +25,76 @@
         </Grid.RowDefinitions>
 
         <Label
-            Grid.Column="1"
-            Grid.Row="1"
-            Content="Username:"
-            FontSize="20"
+            Content="Username"
+            FontFamily="Ariel"
             VerticalAlignment="Center"
-            HorizontalAlignment="Center"
+            Foreground="White"
+            FontSize="20"
+            Margin="10"
             />
-        <TextBlock
-            Grid.Column="2"
+        <Label
             Grid.Row="1"
+            Content="Overview"
+            FontFamily="Ariel"
+            VerticalAlignment="Center"
+            Foreground="White"
             FontSize="20"
-            Height="40"
-            Width="120"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"/>
-
+            Margin="0,30,0,0"
+            />
         <Button
-            x:Name="btnUser"
-            Grid.Row="2"
+            x:Name="btnUserTravelsWindow"
             Grid.Column="1"
-            Height="45"
-            Width="120"
-            Content="User"
-            FontSize="25"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"/>
-
+            Margin="15"
+            Content="User Details"
+            Background="MintCream"
+            />
         <Button
             x:Name="btnAddTravel"
-            Grid.Row="3"
             Grid.Column="1"
-            Height="45"
-            Width="120"
+            Grid.Row="1"
+            Margin="10,30,10,6"           
             Content="Add Travel"
-            FontSize="25"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"/>
+            Background="MintCream"
+            />
+        <Button
+            x:Name="btnDetails"
+            Grid.Column="2"
+            Grid.Row="2"
+            Margin="15"
+            Content="Details"
+            Background="MintCream"
+            />
+        <Button
+            x:Name="btnRemove"
+            Grid.Column="3"
+            Grid.Row="2"
+            Margin="15"
+            Content="Remove"
+            Background="MintCream"
+            />
+        <Button
+            x:Name="btnAsk"
+            Grid.Column="5"
+            Margin="50,20,50,20"
+            Content="?"
+            Background="MintCream"
+            />
+        <Button
+            x:Name="btnSignOut"
+            Grid.Column="5"
+            Grid.Row="5"
+            Margin="10,30,10,6"           
+            Content="Sign out"
+            Background="MintCream"
+            />
+        <ComboBox  
+            x:Name="cmbCountrey"
+            Grid.Row="2"
+            Height="30"
+            VerticalContentAlignment="Center" 
+            Grid.ColumnSpan="2"
+            Background="MintCream"
+            Margin="10,0,10,0"
+            />
     </Grid>
 </Window>

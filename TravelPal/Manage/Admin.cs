@@ -11,7 +11,7 @@ public class Admin : IUser
 {
     public Admin(string username, string password, Countries location)
     {
-
+        
     }
 
     public string username { get ; set; }

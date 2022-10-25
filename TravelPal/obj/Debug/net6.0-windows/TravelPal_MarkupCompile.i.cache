@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\dula8\Desktop\Skola\TravelPal\TravelPal\obj\Debug\net6.0-windows\
+C:\Users\dula8\OneDrive\Desktop\Skola\TravelPal\TravelPal\obj\Debug\net6.0-windows\
 TravelPal
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\dula8\Desktop\Skola\TravelPal\TravelPal\App.xaml
-31217199439
+C:\Users\dula8\OneDrive\Desktop\Skola\TravelPal\TravelPal\App.xaml
+51536844318
 
-181597413500
-194-1103864946
-MainWindow.xaml;RegisterWindow.xaml;TravelsWindow.xaml;
+20-1896465806
+194618410957
+AddTravelWindow.xaml;MainWindow.xaml;RegisterWindow.xaml;TravelsWindow.xaml;UserDetailsWindow.xaml;
 
 True
 

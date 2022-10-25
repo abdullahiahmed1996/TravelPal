@@ -39,5 +39,6 @@ namespace TravelPal.Enums
         Slovenia,
         Spain,
         Sweden
+
     }
 }
