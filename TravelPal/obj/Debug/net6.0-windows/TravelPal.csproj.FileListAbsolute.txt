@@ -52,3 +52,5 @@ C:\Users\dula8\OneDrive\Desktop\Skola\TravelPal\TravelPal\obj\Debug\net6.0-windo
 C:\Users\dula8\OneDrive\Desktop\Skola\TravelPal\TravelPal\obj\Debug\net6.0-windows\UserDetailsWindow.g.cs
 C:\Users\dula8\OneDrive\Desktop\Skola\TravelPal\TravelPal\obj\Debug\net6.0-windows\AddTravelWindow.baml
 C:\Users\dula8\OneDrive\Desktop\Skola\TravelPal\TravelPal\obj\Debug\net6.0-windows\UserDetailsWindow.baml
+C:\Users\dula8\OneDrive\Desktop\Skola\TravelPal\TravelPal\obj\Debug\net6.0-windows\TravelDetailsWindow.g.cs
+C:\Users\dula8\OneDrive\Desktop\Skola\TravelPal\TravelPal\obj\Debug\net6.0-windows\TravelDetailsWindow.baml

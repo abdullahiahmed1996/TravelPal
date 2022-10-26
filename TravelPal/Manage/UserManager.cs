@@ -10,8 +10,13 @@ namespace TravelPal.Manage;
 
 public class UserManager
 {
+    // Make new list with users
     public List<IUser> users = new();
-    public IUser SignedInUser;
+    // Signed in user
+    public IUser? SignedInUser { get; set; }
+
+
+
 
 
     public bool AddUser(string username,string password,Countries country)
@@ -44,6 +49,19 @@ public class UserManager
 
         return false;
 
+    } 
+
+    public IUser GetUser(string username)
+    {
+        foreach(IUser user in users)
+        {
+            if(user.username == username)
+            {
+                return user;
+            }
+            
+        }
+        return null;
     }
 
          //public void RemoveUser(IUser)

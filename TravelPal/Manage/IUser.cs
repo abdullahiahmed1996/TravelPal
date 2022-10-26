@@ -9,6 +9,7 @@ namespace TravelPal.Manage
 {
     public interface IUser
     {
+        // Props
         public string username { get; set; }
         public string password { get; set; }
 

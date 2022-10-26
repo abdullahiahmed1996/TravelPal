@@ -44,8 +44,6 @@ namespace TravelPal
                 this.userManager.AddUser(username, password,country);
             }
 
-            
-
             Close();
         }
     }

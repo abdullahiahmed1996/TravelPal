@@ -8,6 +8,7 @@ using System.Xml.Linq;
 
 namespace TravelPal.Enums
 {
+    // Populate the enum with european countries
     public enum EuropeanCountries
     {
         Austria,

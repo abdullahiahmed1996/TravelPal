@@ -6,7 +6,83 @@
         xmlns:local="clr-namespace:TravelPal"
         mc:Ignorable="d"
         Title="UserDetailsWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="20" Background="MediumSlateBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="2"
+            Content="User Details"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            FontSize="40"
+            Grid.ColumnSpan="2"
+            />
+
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            Content="Username"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            FontSize="20"/>
+        <Label
+            x:Name="lblUsername"
+            Grid.Row="1"
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            FontSize="20"
+            Width="120"
+            Height="50"/>
         
+        <Label
+            Grid.Row="2"
+            Grid.Column="0"
+            Content="Password"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            FontSize="20"/>
+        <Label
+            x:Name="lblPassword"
+            Grid.Row="2"
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            FontSize="20"
+            Width="120"
+            Height="50"/>
+        
+        <Label
+            Grid.Row="3"
+            Grid.Column="0"
+            Content="Country"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            FontSize="20"/>
+        <Label
+            x:Name="lblCountry"
+            Grid.Row="3"
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            FontSize="20"
+            Width="120"
+            Height="50"/>
     </Grid>
 </Window>

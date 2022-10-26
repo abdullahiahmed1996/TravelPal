@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TravelPal.Manage;
 
 namespace TravelPal
 {
@@ -19,9 +20,16 @@ namespace TravelPal
     /// </summary>
     public partial class UserDetailsWindow : Window
     {
+      
+
+        
+
         public UserDetailsWindow()
         {
+            
             InitializeComponent();
+
+           
         }
     }
 }

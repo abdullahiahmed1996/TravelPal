@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TravelPal"
         mc:Ignorable="d"
         Title="TravelsWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="MediumSlateBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -26,29 +26,30 @@
 
         <Label
             x:Name="lblUsername"
-            Content="Username"
             FontFamily="Ariel"
             VerticalAlignment="Center"
             Foreground="White"
             FontSize="20"
+            Height="50"
             Margin="10"
+            
             />
         <Label
             Grid.Row="1"
-            Content="Overview"
             FontFamily="Ariel"
             VerticalAlignment="Center"
             Foreground="White"
-            FontSize="20"
+            FontSize="40"
+            Height="50"
             Margin="0,30,0,0"
             />
         <Button
-            x:Name="btnUserTravels"
+            x:Name="btnUserDetails"
             Grid.Column="1"
-            Margin="15"
+            Margin="20,15,10,15"
             Content="User"
             Background="MintCream"
-            Click="btnUserTravels_Click"/>
+            Click="btnUserDetails_Click"/>
         <Button
             x:Name="btnAddTravel"
             Grid.Column="1"
@@ -64,7 +65,7 @@
             Margin="15"
             Content="Details"
             Background="MintCream"
-            />
+            Click="btnDetails_Click"/>
         <Button
             x:Name="btnRemove"
             Grid.Column="3"
@@ -72,14 +73,14 @@
             Margin="15"
             Content="Remove"
             Background="MintCream"
-            />
+            Click="btnRemove_Click"/>
         <Button
             x:Name="btnAsk"
             Grid.Column="5"
             Margin="50,20,50,20"
             Content="?"
             Background="MintCream"
-            />
+            Click="btnAsk_Click"/>
         <Button
             x:Name="btnSignOut"
             Grid.Column="5"
@@ -87,7 +88,7 @@
             Margin="10,30,10,6"           
             Content="Sign out"
             Background="MintCream"
-            />
+            Click="btnSignOut_Click"/>
         <ComboBox  
             x:Name="cmbCountrey"
             Grid.Row="2"

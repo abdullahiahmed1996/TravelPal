@@ -50,6 +50,7 @@ namespace TravelPal
 
            if(userManager.SignInUser(username, password))
             {
+                userManager.SignedInUser =  userManager.GetUser(username);
                 // log in
                 TravelsWindow travelsWindow = new(userManager);
                 travelsWindow.Show();

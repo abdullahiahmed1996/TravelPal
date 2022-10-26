@@ -12,11 +12,13 @@ namespace TravelPal.Manage
     {
         //List<Travel> travels = new();
 
+        // Constuctor
         public User(string username,string password,Countries location)
         {
 
         }
 
+        // Props
         public string username { get; set; }
         public string password { get; set; }
         public Countries location { get; set; }

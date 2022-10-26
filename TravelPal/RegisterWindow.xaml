@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TravelPal"
         mc:Ignorable="d"
         Title="RegisterWindow" Height="450" Width="800">
-    <Grid Margin="20" Background="MintCream">
+    <Grid Margin="20" Background="MediumSlateBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -29,20 +29,20 @@
             Grid.Column="2"
             Content="Username"
             VerticalAlignment="Center"
-            Foreground="Black"/>
+            Foreground="White"/>
         <Label 
             Grid.Row="3"
             Grid.Column="2"
             Content="Password"
             VerticalAlignment="Center"
-            Foreground="Black"/>
+            Foreground="White"/>
         <Label 
             Grid.Row="1"
             Grid.Column="2"
             Grid.ColumnSpan="2"
             Content="Register"
             FontWeight="Bold"
-            Foreground="Black"
+            Foreground="White"
             FontSize="40"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"/>

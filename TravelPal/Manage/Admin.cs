@@ -7,13 +7,16 @@ using TravelPal.Enums;
 
 namespace TravelPal.Manage;
 
+
 public class Admin : IUser
 {
+    // Constructor with inputs
     public Admin(string username, string password, Countries location)
     {
         
     }
 
+    // Propeties
     public string username { get ; set; }
     public string password { get; set; }
     public Countries location { get; set; }

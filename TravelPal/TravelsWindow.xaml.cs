@@ -21,31 +21,66 @@ namespace TravelPal
     /// </summary>
     public partial class TravelsWindow : Window
     {
-        UserManager userManager = new();
+        UserManager userManager;
         public TravelsWindow(UserManager userManager)
         {
             this.userManager = userManager;
             string[] location = Enum.GetNames(typeof(Countries));
-           // cbCountry.ItemsSource = location;
+            // cbCountry.ItemsSource = location;
+
+            
 
             InitializeComponent();
 
-            
-        }
+            lblUsername.Content = userManager.SignedInUser.username;
 
-        private void btnUserTravels_Click(object sender, RoutedEventArgs e)
-        {
-            UserDetailsWindow userDetailsWindow = new();
 
-            userDetailsWindow.Show();
 
         }
 
+        
         private void btnAddTravel_Click(object sender, RoutedEventArgs e)
         {
             AddTravelWindow addTravelWindow = new();
 
             addTravelWindow.Show();
+        }
+
+        // If the ask botton is click open a pop-up window with a message
+        private void btnAsk_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("For more info on how to use the app visite our website:  www.travelpal.com","Info" );
+
+        }
+
+        // When the sig
+        private void btnSignOut_Click(object sender, RoutedEventArgs e)
+        {
+            
+
+            MainWindow mainWindow = new();
+            mainWindow.Show();
+
+            Close();
+
+        }
+
+        private void btnUserDetails_Click(object sender, RoutedEventArgs e)
+        {
+            UserDetailsWindow userDetailsWindow = new();
+            userDetailsWindow.Show();
+        }
+
+        private void btnDetails_Click(object sender, RoutedEventArgs e)
+        {
+            TravelDetailsWindow travelDetailsWindow = new();
+            travelDetailsWindow.Show(); 
+
+        }
+
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
