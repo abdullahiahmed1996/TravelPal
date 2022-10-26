@@ -28,6 +28,7 @@
             x:Name="lblUsername"
             FontFamily="Ariel"
             VerticalAlignment="Center"
+            HorizontalAlignment="Center"
             Foreground="White"
             FontSize="20"
             Height="50"

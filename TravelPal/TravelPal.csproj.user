@@ -10,6 +10,12 @@
     <Compile Update="AddTravelWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ChangePasswordWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ChangeUsernameWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="RegisterWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -25,6 +31,12 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="AddTravelWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ChangePasswordWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ChangeUsernameWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\dula8\OneDrive\Desktop\Skola\TravelPal\TravelPal\App.xaml
-6480776909
+81401007399
 
-19-52067174
+21516722973
 194618410957
-AddTravelWindow.xaml;MainWindow.xaml;RegisterWindow.xaml;TravelDetailsWindow.xaml;TravelsWindow.xaml;UserDetailsWindow.xaml;
+AddTravelWindow.xaml;ChangePasswordWindow.xaml;ChangeUsernameWindow.xaml;MainWindow.xaml;RegisterWindow.xaml;TravelDetailsWindow.xaml;TravelsWindow.xaml;UserDetailsWindow.xaml;
 
 False
 

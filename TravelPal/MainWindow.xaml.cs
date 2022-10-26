@@ -22,11 +22,13 @@ namespace TravelPal
     /// </summary>
     public partial class MainWindow : Window
     {
-        UserManager userManager = new();
+        UserManager userManager;
 
         public MainWindow()
         {
             InitializeComponent();
+
+            userManager = new();
         }
         public MainWindow(UserManager userManager)
         {

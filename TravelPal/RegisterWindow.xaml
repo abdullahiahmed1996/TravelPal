@@ -72,6 +72,8 @@
             Grid.Column="2"
             Width="100"
             Height="35"
-            x:Name="cbCountry"/>
+            x:Name="cbCountry"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"/>
     </Grid>
 </Window>

@@ -24,13 +24,15 @@ namespace TravelPal
         UserManager userManager;
         public TravelsWindow(UserManager userManager)
         {
-            this.userManager = userManager;
+            
             string[] location = Enum.GetNames(typeof(Countries));
             // cbCountry.ItemsSource = location;
 
             
 
             InitializeComponent();
+
+            this.userManager = userManager;
 
             lblUsername.Content = userManager.SignedInUser.username;
 
@@ -58,7 +60,7 @@ namespace TravelPal
         {
             
 
-            MainWindow mainWindow = new();
+            MainWindow mainWindow = new(userManager);
             mainWindow.Show();
 
             Close();
@@ -67,14 +69,18 @@ namespace TravelPal
 
         private void btnUserDetails_Click(object sender, RoutedEventArgs e)
         {
-            UserDetailsWindow userDetailsWindow = new();
+            UserDetailsWindow userDetailsWindow = new(userManager);
             userDetailsWindow.Show();
+
+            Close();
         }
 
         private void btnDetails_Click(object sender, RoutedEventArgs e)
         {
             TravelDetailsWindow travelDetailsWindow = new();
-            travelDetailsWindow.Show(); 
+            travelDetailsWindow.Show();
+
+            Close();
 
         }
 
