@@ -70,7 +70,7 @@
         <ComboBox 
             Grid.Row="4"
             Grid.Column="2"
-            Width="100"
+            Width="110"
             Height="35"
             x:Name="cbCountry"
             VerticalAlignment="Center"

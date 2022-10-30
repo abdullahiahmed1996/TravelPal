@@ -7,7 +7,7 @@ using TravelPal.Enums;
 
 namespace TravelPal.Manage;
 
-
+// Admin class should inherit form IUser
 public class Admin : IUser
 {
     // Constructor with inputs
@@ -16,7 +16,7 @@ public class Admin : IUser
         
     }
 
-    // Propeties
+    // Properties
     public string username { get ; set; }
     public string password { get; set; }
     public Countries location { get; set; }

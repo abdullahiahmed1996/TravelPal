@@ -40,10 +40,10 @@ namespace TravelPal
 
         }
 
-        
+        // Function to open AddTrave window
         private void btnAddTravel_Click(object sender, RoutedEventArgs e)
         {
-            AddTravelWindow addTravelWindow = new();
+            AddTravelWindow addTravelWindow = new(userManager);
 
             addTravelWindow.Show();
         }
@@ -55,7 +55,7 @@ namespace TravelPal
 
         }
 
-        // When the sig
+        // When sign-out is clicked open signout and open MainWindow 
         private void btnSignOut_Click(object sender, RoutedEventArgs e)
         {
             
@@ -67,6 +67,7 @@ namespace TravelPal
 
         }
 
+        // Open UserDetailsWindow
         private void btnUserDetails_Click(object sender, RoutedEventArgs e)
         {
             UserDetailsWindow userDetailsWindow = new(userManager);
@@ -75,6 +76,7 @@ namespace TravelPal
             Close();
         }
 
+        // Open DetailsWindow
         private void btnDetails_Click(object sender, RoutedEventArgs e)
         {
             TravelDetailsWindow travelDetailsWindow = new();
@@ -84,6 +86,7 @@ namespace TravelPal
 
         }
 
+        // Remove function
         private void btnRemove_Click(object sender, RoutedEventArgs e)
         {
 

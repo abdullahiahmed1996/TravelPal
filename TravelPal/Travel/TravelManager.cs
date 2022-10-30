@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace TravelPal.Travel
 {
-    //public class TravelManager
-    //{
-    //    List<Travel> travels = new();
+    public class TravelManager
+    {
+        public List<Travel> travels = new();
 
-    //    public void AddTravel(Travel)
-    //    {
+        public void AddTravel()
+        {
 
-    //    }
+        }
 
-    //    public void RemoveTravel(Travel)
-    //    {
+        public void RemoveTravel()
+        {
 
-    //    }
-    //}
+        }
+    }
 }

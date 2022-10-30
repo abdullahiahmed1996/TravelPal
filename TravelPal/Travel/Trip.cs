@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace TravelPal.Travel
 {
-    internal class Trip
+    public class Trip
     {
+        public Type TripType { get; set; }
+
+        public Trip()
+        {
+            
+        }
+
+        //public string GetInfo()
+        //{
+
+        //}
     }
 }

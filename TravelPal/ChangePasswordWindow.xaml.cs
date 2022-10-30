@@ -21,20 +21,37 @@ namespace TravelPal
     public partial class ChangePasswordWindow : Window
     {
         private UserManager userManager;
+
+        public string NewPassword { get; set; }
+
+
+        // Constructor
         public ChangePasswordWindow(UserManager userManager)
         {
             InitializeComponent();
             this.userManager = userManager;
         }
 
-        private void btnChangePassword_Click(object sender, RoutedEventArgs e)
+        // Function for when change password button is click
+        public void btnChangePassword_Click(object sender, RoutedEventArgs e)
         {
-            string newPassword = txtNewPassword.Text;
-            userManager.SignedInUser.password = newPassword;
+            
 
-            UserDetailsWindow userDetailsWindow = new(userManager);
-            userDetailsWindow.Show();
-            Close();
+            if(txtNewPassword.Text == txtConfirmPassword.Text)
+            {
+                string newPassword = txtConfirmPassword.Text;
+                //userManager.SignedInUser.password = newPassword;
+                this.NewPassword = newPassword;
+                Close();
+
+            }
+            else
+            {
+                MessageBox.Show("The two passwords don't match","Warning!");
+            }
+
         }
+
+        
     }
 }

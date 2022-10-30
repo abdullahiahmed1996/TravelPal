@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TravelPal.Enums;
+using TravelPal.Manage;
 
 namespace TravelPal
 {
@@ -19,9 +21,17 @@ namespace TravelPal
     /// </summary>
     public partial class AddTravelWindow : Window
     {
-        public AddTravelWindow()
+        UserManager userManager = new();
+        public AddTravelWindow(UserManager userManager)
         {
             InitializeComponent();
+            this.userManager = userManager;
+            string[] location = Enum.GetNames(typeof(Countries));
+            string[] tripType = Enum.GetNames(typeof(TripTypes));
+      
+            cbTravelDestination.ItemsSource = location;
+            cbTriptype.ItemsSource = tripType;
+
         }
     }
 }

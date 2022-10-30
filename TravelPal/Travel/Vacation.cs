@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TravelPal.Travel
 {
-    internal class Vacation
+    public class Vacation
     {
     }
 }

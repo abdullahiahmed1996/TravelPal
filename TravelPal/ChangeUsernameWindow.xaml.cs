@@ -21,26 +21,32 @@ namespace TravelPal
     /// </summary>
     public partial class ChangeUsernameWindow : Window
     {
-        private UserManager userManager;
-        public ChangeUsernameWindow(UserManager userManager)
+
+        public string NewUsername { get; set; }
+
+
+        // Constructor
+        public ChangeUsernameWindow()
         {
            
-            InitializeComponent();
-            this.userManager =  userManager;
-            
+            InitializeComponent();            
 
         }
 
-        private void btnChangeUsername_Click(object sender, RoutedEventArgs e)
+        // Function for when change username button is click
+        private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             string newUsername = txtNewUsername.Text;
 
-            userManager.SignedInUser.username = newUsername;
+            //userManager.SignedInUser.username = newUsername;
+            this.NewUsername = newUsername;
 
-            UserDetailsWindow userDetailsWindow = new(userManager);
-            userDetailsWindow.Show();
             Close();
+        }
 
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

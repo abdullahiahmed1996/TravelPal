@@ -24,12 +24,14 @@ namespace TravelPal
     {
         UserManager userManager;
 
+        // Constructor
         public MainWindow()
         {
             InitializeComponent();
 
             userManager = new();
         }
+        //Constructor
         public MainWindow(UserManager userManager)
         {
             InitializeComponent();
@@ -37,6 +39,7 @@ namespace TravelPal
             this.userManager = userManager;
         }
 
+        // Function for when register button is click
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             RegisterWindow registerWindow = new(userManager);
@@ -45,11 +48,13 @@ namespace TravelPal
 
         }
 
+        // Function for when signin button is click
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
         {
             string username = txtUsername.Text;
             string password = pswPassword.Password;
-
+            
+            
            if(userManager.SignInUser(username, password))
             {
                 userManager.SignedInUser =  userManager.GetUser(username);
@@ -58,6 +63,8 @@ namespace TravelPal
                 travelsWindow.Show();
                 Close();
             }
+
+           // If username or password was incorrect show a message box
            else
             {
                 MessageBox.Show("Username or password is incorrect", "Warning");

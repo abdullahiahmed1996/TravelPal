@@ -18,7 +18,7 @@ public class UserManager
 
 
 
-
+    // Add user with new username, password and location
     public bool AddUser(string username,string password,Countries country)
     {
         User user = new(username, password, country);
@@ -32,6 +32,7 @@ public class UserManager
 
     }
 
+    // Make new list with all users
     public List<IUser> GetAllUsers()
     {
         return users;
@@ -39,8 +40,10 @@ public class UserManager
 
     public bool SignInUser(string username, string password)
     {
+        // Loop through all users
         foreach(User user in users)
         {
+            // Check is the username and password are the same
             if(user.username == username && user.password == password)
             {
                 return true;
@@ -51,6 +54,7 @@ public class UserManager
 
     } 
 
+    // Get users username
     public IUser GetUser(string username)
     {
         foreach(IUser user in users)

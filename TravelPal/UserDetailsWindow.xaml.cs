@@ -23,7 +23,11 @@ namespace TravelPal
     {
 
         private UserManager userManager;
+        public string newUsername;
+        private string newPassword;
+        private Countries newCountry;
 
+        // Constuctor
         public UserDetailsWindow(UserManager userManager)
         {
             
@@ -36,33 +40,81 @@ namespace TravelPal
             lblUsername.Content = userManager.SignedInUser.username;
             lblPassword.Content = userManager.SignedInUser.password;
             lblCountry.Content = userManager.SignedInUser.location.ToString();
-
-           
         }
 
+        // Open the ChangeUsername window
         private void btnChangeUsername_Click(object sender, RoutedEventArgs e)
         {
-            ChangeUsernameWindow changeUsernameWindow = new(userManager);
-            changeUsernameWindow.Show();
+            ChangeUsernameWindow changeUsernameWindow = new();
+            changeUsernameWindow.ShowDialog();
+
+            if(!string.IsNullOrEmpty(changeUsernameWindow.NewUsername))
+            {
+                newUsername = changeUsernameWindow.NewUsername;
+                lblUsername.Content = changeUsernameWindow.NewUsername;
+            }
         }
 
+        // Open the ChangePassword window
         private void btnChangePassword_Click(object sender, RoutedEventArgs e)
         {
             ChangePasswordWindow changePasswordWindow = new(userManager);
-            changePasswordWindow.Show();
+            changePasswordWindow.ShowDialog();
+
+            if (!string.IsNullOrEmpty(changePasswordWindow.NewPassword))
+            {
+                newPassword = changePasswordWindow.NewPassword;
+                lblPassword.Content = changePasswordWindow.NewPassword;
+
+            }
         }
 
+        // Function that allows the user changes the loction
         private void btnChangeCountry_Click(object sender, RoutedEventArgs e)
         {
-            string newCountry = cbNewCountry.Text;
+            string newCountry = cbNewCountry.SelectedItem.ToString();
 
             Countries selectedNewCountry = (Countries)Enum.Parse(typeof(Countries), newCountry);
 
-            userManager.SignedInUser.location = selectedNewCountry;
+            //userManager.SignedInUser.location = selectedNewCountry;
+            this.newCountry = selectedNewCountry;
 
-            UserDetailsWindow userDetailsWindow = new(userManager);
-            userDetailsWindow.Show();
+            lblCountry.Content = cbNewCountry.SelectedItem.ToString();
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+
+            //string newContry = cbNewCountry.Text;
+            if(!string.IsNullOrEmpty(this.newUsername))
+            {
+                userManager.SignedInUser.username = newUsername;
+            }
+            if(!string.IsNullOrEmpty (this.newPassword))
+            {
+                userManager.SignedInUser.password = newPassword;
+            }
+            if(this.newCountry != null)
+            {
+                userManager.SignedInUser.location = newCountry;
+            }
+
+            TravelsWindow travelsWindow = new(userManager);
+            travelsWindow.Show();
             Close();
         }
+
+       
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            
+
+            TravelsWindow travelsWindow = new(userManager);
+            travelsWindow.Show();
+            Close();
+        }
+
+       
     }
 }
