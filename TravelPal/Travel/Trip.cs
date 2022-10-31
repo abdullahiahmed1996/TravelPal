@@ -8,17 +8,19 @@ using TravelPal.Enums;
 
 namespace TravelPal.Travel;
 
-public class Trip
+public class Trip : Travel
 {
+    private string[] tripType;
+    private int numOfTravellers;
     public TripTypes Type { get; set; }
 
-    //public Trip(string destination, Countries country, int numOfTravels,TripTypes tripTypes) : base(destination,country,numOfTravels)
-    //{
-    //    Type = tripTypes;
-    //}
+    public Trip(TripTypes types, string destination, Countries country, int numOfTravellers) : base(destination,country,numOfTravellers)
+    {
+        this.Type = types;
+    }
 
     //public override string GetInfo()
     //{
-    //    return base.GetInfo();
+    //    return $"Trip to {base.Country}";
     //}
 }

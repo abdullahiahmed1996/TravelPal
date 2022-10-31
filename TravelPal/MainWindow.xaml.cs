@@ -46,7 +46,7 @@ namespace TravelPal
         // Function for when register button is click
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            RegisterWindow registerWindow = new(userManager,travelManager);
+            RegisterWindow registerWindow = new(userManager);
 
             registerWindow.Show();
 

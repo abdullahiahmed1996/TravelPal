@@ -10,17 +10,22 @@ namespace TravelPal.Manage
 {
     public  class User:IUser
     {
-        //List<Travel> travels = new();
-
-        // Constuctor
-        public User(string username,string password,Countries location)
-        {
-
-        }
-
         // Properteis
         public string username { get; set; }
         public string password { get; set; }
         public Countries location { get; set; }
+
+        public bool isAdmin { get; set; }
+
+        //public List<Travel> Travels { get; set; } = new();
+
+        // Constuctor
+        public User(string username,string password,Countries location)
+        {
+            username = username;
+            password = password;
+            location = location;
+        }
+
     }
 }

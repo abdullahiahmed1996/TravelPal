@@ -10,14 +10,20 @@ namespace TravelPal.Manage;
 // Admin class should inherit form IUser
 public class Admin : IUser
 {
+    // Properties
+    public string username { get; set; }
+    public string password { get; set; }
+    public Countries location { get; set; }
+
+    public bool isAdmin { get; set; } = true;
+
     // Constructor with inputs
-    public Admin(string username, string password, Countries location)
+    public Admin(string username, string password)
     {
+        username = username;
+        password = password;
         
     }
 
-    // Properties
-    public string username { get ; set; }
-    public string password { get; set; }
-    public Countries location { get; set; }
+   
 }

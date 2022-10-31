@@ -31,7 +31,7 @@
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
             FontSize="12"
-           />
+           Foreground="MintCream"/>
         <TextBox
             x:Name="txtNewUsername"
             Grid.Row="2"

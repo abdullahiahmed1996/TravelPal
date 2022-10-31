@@ -29,20 +29,20 @@
             Grid.Column="2"
             Content="Username"
             VerticalAlignment="Center"
-            Foreground="White"/>
+            Foreground="MintCream"/>
         <Label 
             Grid.Row="3"
             Grid.Column="2"
             Content="Password"
             VerticalAlignment="Center"
-            Foreground="White"/>
+            Foreground="MintCream"/>
         <Label 
             Grid.Row="1"
             Grid.Column="2"
             Grid.ColumnSpan="2"
             Content="Register"
             FontWeight="Bold"
-            Foreground="White"
+            Foreground="MintCream"
             FontSize="40"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"/>

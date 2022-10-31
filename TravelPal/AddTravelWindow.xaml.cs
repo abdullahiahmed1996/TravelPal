@@ -36,7 +36,7 @@ namespace TravelPal
             this.travelManager = travelManager;
 
             string orginCountry = txtOrginCountry.Text;
-            string numOfTravelers = txtNumOfTravelers.Text;
+            string numOfTravelers = txtNumOfTravellers.Text;
             
             //txtOrginCountry.Text = orginCountry;
             //txtNumOfTravelers.Text = numOfTravels;

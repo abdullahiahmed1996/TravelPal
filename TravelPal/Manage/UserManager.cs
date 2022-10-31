@@ -13,7 +13,21 @@ public class UserManager
     // Make new list with users
     public List<IUser> users = new();
     // Signed in user
-    public IUser? SignedInUser { get; set; }
+    public IUser SignedInUser { get; set; }
+
+    public UserManager()
+    {
+        DefaultUsers();
+    }
+
+    private void DefaultUsers()
+    {
+        Admin admin = new("admin","password");
+
+        User defaultUser = new("Gandalf", "password" , Countries.South_Africa);
+
+        //List<Travel> travels = new();
+    }
 
 
 

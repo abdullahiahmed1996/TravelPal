@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,11 +24,11 @@ namespace TravelPal
     public partial class RegisterWindow : Window
     {
         private UserManager userManager;
-        private readonly TravelManager travelManager;
+        private TravelManager travelManager;
         
 
         // Costructor
-        public RegisterWindow(UserManager userManager, TravelManager travelManager)
+        public RegisterWindow(UserManager userManager)
         {
             InitializeComponent();
 
@@ -42,20 +43,44 @@ namespace TravelPal
         {
             string username = txtUsername.Text;
             string password = pswPassword.Password;
-            string location = cbCountry.SelectedItem as string;
+            string country = cbCountry.SelectedItem as string;
 
 
-                //userManager.SignedInUser.username = newUsername;
+            //userManager.SignedInUser.username = newUsername;
 
 
-         
-            if (location != null)
+            try
             {
-                Countries country = (Countries)Enum.Parse(typeof(Countries), location); 
-                this.userManager.AddUser(username, password,country);
+                if (username.Count() == 0 || password.Count() == 0 || country.Count() == 0)
+                {
+                    MessageBox.Show("Error! Please fill in all the information!");
+                              
+                }
+                else
+                {
+                    Countries countries = (Countries)Enum.Parse(typeof(Countries),country);
+
+                    if(userManager.AddUser(txtUsername.Text, pswPassword.Password, countries))
+                    {
+                        MainWindow mainWindow = new (userManager,travelManager);
+                        mainWindow.Show();
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sorry, this username is already in use. Please use another!");
+                    }
+                }
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show("ERROR! You didn´t choose a country");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR! Fill in all the information");
             }
 
-            Close();
         }
     }
 }

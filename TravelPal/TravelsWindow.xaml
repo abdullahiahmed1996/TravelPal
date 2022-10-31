@@ -37,7 +37,7 @@
             FontFamily="Ariel"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
-            Foreground="White"
+            Foreground="MintCream"
             FontSize="20"
             Height="50"
             Width="125"

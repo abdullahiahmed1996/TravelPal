@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,17 @@ namespace TravelPal.Travel
     {
         public string Destination { get; set; }
         public Countries Country { get; set; }
-        public int Travellers { get; set; }
+        public int numOfTravellers { get; set; }
 
         //public int TravelDays { get; set; }
+
+        public Travel(string destination, Countries country, int numOfTravellers)
+        {
+            Destination = destination;
+            Country = country;
+            numOfTravellers = numOfTravellers;
+        }
+
+       
     }
 }
