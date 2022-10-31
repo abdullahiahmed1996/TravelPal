@@ -23,7 +23,15 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+        <Label
+                Grid.Row="1"
+                FontFamily="Ariel"
+                VerticalAlignment="Center"
+                Foreground="White"
+                FontSize="40"
+                Height="50"
+                Margin="0,30,0,0"
+                />
         <Label
             x:Name="lblUsername"
             FontFamily="Ariel"
@@ -32,22 +40,13 @@
             Foreground="White"
             FontSize="20"
             Height="50"
-            Margin="10"
-            
+            Width="125"
             />
-        <Label
-            Grid.Row="1"
-            FontFamily="Ariel"
-            VerticalAlignment="Center"
-            Foreground="White"
-            FontSize="40"
-            Height="50"
-            Margin="0,30,0,0"
-            />
+
         <Button
             x:Name="btnUserDetails"
             Grid.Column="1"
-            Margin="20,15,10,15"
+            Margin="10"
             Content="User"
             Background="MintCream"
             Click="btnUserDetails_Click"/>
@@ -55,23 +54,25 @@
             x:Name="btnAddTravel"
             Grid.Column="1"
             Grid.Row="1"
-            Margin="10,30,10,6"           
-            Content="Add Travel"
+            Margin="10"
+            Height="50"
             Background="MintCream"
+            VerticalAlignment="Center"        
+            Content="Add Travel"
             Click="btnAddTravel_Click"/>
         <Button
             x:Name="btnDetails"
-            Grid.Column="2"
+            Grid.Column="1"
             Grid.Row="2"
-            Margin="15"
+            Margin="10"
             Content="Details"
             Background="MintCream"
             Click="btnDetails_Click"/>
         <Button
             x:Name="btnRemove"
-            Grid.Column="3"
-            Grid.Row="2"
-            Margin="15"
+            Grid.Column="1"
+            Grid.Row="3"
+            Margin="10"
             Content="Remove"
             Background="MintCream"
             Click="btnRemove_Click"/>
@@ -90,14 +91,16 @@
             Content="Sign out"
             Background="MintCream"
             Click="btnSignOut_Click"/>
-        <ComboBox  
+        <ListView  
             x:Name="lvCountrey"
-            Grid.Row="2"
-            Height="30"
+            Grid.Column="2"
+            Grid.Row="0"
+            Height="300"
+            Grid.RowSpan="5"
             VerticalContentAlignment="Center" 
             Grid.ColumnSpan="2"
             Background="MintCream"
-            Margin="10,0,10,0"
+            Margin="10,26,10,36"
             />
     </Grid>
 </Window>

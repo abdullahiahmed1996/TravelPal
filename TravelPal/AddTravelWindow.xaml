@@ -69,7 +69,7 @@
             Height="30"
             VerticalContentAlignment="Center"/>
         <TextBox
-            x:Name="cbNumOfTravelers"
+            x:Name="txtNumOfTravelers"
             Grid.Row="4"
             Grid.Column="1"
             Height="30"
@@ -93,7 +93,16 @@
             Grid.Row="5"
             Grid.Column="1"
             Height="30"
-            VerticalContentAlignment="Center"/>
+            VerticalContentAlignment="Center"
+            SelectionChanged="cbTripAlt_SelectionChanged"/>
+        <Button
+            x:Name="btnAdd"
+            Grid.Column="4"
+            Grid.Row="5"
+            Content="Add Travel"
+            Height="30"
+            Width="110"
+            Click="btnAdd_Click"/>
 
     </Grid>
 </Window>

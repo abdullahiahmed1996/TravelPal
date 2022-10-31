@@ -125,7 +125,7 @@ namespace TravelPal {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TravelPal;V1.0.0.0;component/userdetailswindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TravelPal;component/userdetailswindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UserDetailsWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

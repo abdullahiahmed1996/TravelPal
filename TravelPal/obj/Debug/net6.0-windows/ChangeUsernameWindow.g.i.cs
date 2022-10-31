@@ -77,7 +77,7 @@ namespace TravelPal {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TravelPal;V1.0.0.0;component/changeusernamewindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TravelPal;component/changeusernamewindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ChangeUsernameWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
