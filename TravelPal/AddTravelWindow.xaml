@@ -25,7 +25,7 @@
         </Grid.RowDefinitions>
 
         <Label
-            Grid.Row="1"
+            Grid.Row="0"
             Grid.Column="2"
             Grid.ColumnSpan="2"
             Content="Add Travel"
@@ -36,21 +36,21 @@
             HorizontalAlignment="Center"
             FontFamily="Arial"/>
         <Label
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="0"
             Content="Destination:"
             FontSize="20"
             VerticalAlignment="Center"
             Foreground="White"/>
         <Label
-            Grid.Row="3"
+            Grid.Row="2"
             Grid.Column="0"
             Content="Orgin Country:"
             FontSize="18"
             VerticalAlignment="Center"  
             Foreground="White"/>
         <Label
-            Grid.Row="4"
+            Grid.Row="3"
             Grid.Column="0"
             Content="Travelers:"
             FontSize="20"
@@ -58,51 +58,56 @@
             Foreground="White"/>
         <ComboBox
             x:Name="cbTravelDestination"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="1"
             Height="30"
             VerticalContentAlignment="Center"/>
         <TextBox
             x:Name="txtOrginCountry"
-            Grid.Row="3"
+            Grid.Row="2"
             Grid.Column="1"
             Height="30"
             VerticalContentAlignment="Center"/>
         <TextBox
             x:Name="txtNumOfTravelers"
-            Grid.Row="4"
+            Grid.Row="3"
             Grid.Column="1"
             Height="30"
             VerticalContentAlignment="Center"/>
         <Label
-           Grid.Row="5"
+           Grid.Row="4"
             Grid.Column="0"
-            Content="Trip type:"
+            Content="Travel type:"
             FontSize="20"
             VerticalAlignment="Center"
             Foreground="White"/>
-        <ComboBox
-            x:Name="cbTriptype"
-            Grid.Row="5"
-            Grid.Column="1"
-            Height="30"
-            VerticalContentAlignment="Center"/>
 
         <ComboBox
-            x:Name="cbTripAlt"
-            Grid.Row="5"
+            x:Name="cbTrevelType"
+            Grid.Row="4"
             Grid.Column="1"
             Height="30"
             VerticalContentAlignment="Center"
-            SelectionChanged="cbTripAlt_SelectionChanged"/>
+            SelectionChanged="cbTrevelType_SelectionChanged"/>
+        <ComboBox
+            x:Name="cbTripTypes"
+            Grid.Column="2"
+            Grid.Row="5"
+            Visibility="Hidden"/>
+        <CheckBox
+            x:Name="xbAllInclusive"
+            Grid.Column="2"
+            Grid.Row="4"
+            Visibility="Hidden"
+            Content="All Inclusive"/>
         <Button
-            x:Name="btnAdd"
-            Grid.Column="4"
+            x:Name="btnAddTravel"
+            Grid.Column="1"
             Grid.Row="5"
             Content="Add Travel"
             Height="30"
             Width="110"
-            Click="btnAdd_Click"/>
+            Click="btnAddTravel_Click"/>
 
     </Grid>
 </Window>

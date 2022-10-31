@@ -21,6 +21,7 @@ namespace TravelPal
     public partial class ChangePasswordWindow : Window
     {
         private UserManager userManager;
+        
 
         public string NewPassword { get; set; }
 
@@ -30,6 +31,7 @@ namespace TravelPal
         {
             InitializeComponent();
             this.userManager = userManager;
+
         }
 
         // Function for when change password button is click

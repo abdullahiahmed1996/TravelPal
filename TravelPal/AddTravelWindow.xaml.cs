@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TravelPal.Enums;
 using TravelPal.Manage;
+using TravelPal.Travel;
 
 namespace TravelPal
 {
@@ -22,42 +23,58 @@ namespace TravelPal
     /// </summary>
     public partial class AddTravelWindow : Window
     {
-       private UserManager userManager;
-        private TravelsWindow travelsWindow;
+        private UserManager userManager;
+        private TravelManager travelManager;
+        private string selectedTravelType;
         //public string orginCountry;
         //public string numOfTravels;
       
-        public AddTravelWindow(UserManager userManager)
+        public AddTravelWindow(UserManager userManager,TravelManager travelManager)
         {
             InitializeComponent();
             this.userManager = userManager;
+            this.travelManager = travelManager;
+
+            string orginCountry = txtOrginCountry.Text;
+            string numOfTravelers = txtNumOfTravelers.Text;
             
             //txtOrginCountry.Text = orginCountry;
             //txtNumOfTravelers.Text = numOfTravels;
             string[] location = Enum.GetNames(typeof(Countries));
+            string[] travelType = Enum.GetNames(typeof(TravelTypes));
             string[] tripType = Enum.GetNames(typeof(TripTypes));
-      
+            
             cbTravelDestination.ItemsSource = location;
-            cbTripAlt.ItemsSource = tripType;
-
-            //if (cbTripAlt.SelectedItem == Enum.GetNames(typeof(TripTypes))
-            //{
-                
-            //}
+            cbTrevelType.ItemsSource = travelType;
            
-        }
-
-
-
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-            //if()
+            //if (cbTrevelType.SelectedItem == Enum.GetNames(typeof(TripTypes)))
             //{
-
+            //    string[] travelTipes = Enum.GetNames(typeof(TripTypes));
             //}
+
         }
 
-        private void cbTripAlt_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+
+        
+
+        private void cbTrevelType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            selectedTravelType = cbTrevelType.SelectedItem as string;
+
+            if(selectedTravelType == "Trip")
+            {
+                cbTripTypes.Visibility = Visibility.Visible;
+                xbAllInclusive.Visibility = Visibility.Hidden;
+            }
+            else if(selectedTravelType == "Vacation")
+            {
+                xbAllInclusive.Visibility = Visibility.Hidden;
+                cbTripTypes.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void btnAddTravel_Click(object sender, RoutedEventArgs e)
         {
 
         }

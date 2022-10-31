@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TravelPal.Enums;
 
-namespace TravelPal.Travel
+namespace TravelPal.Travel;
+
+public class Trip
 {
-    public class Trip
-    {
-        public Type TripType { get; set; }
+    public TripTypes Type { get; set; }
 
-        public Trip()
-        {
-            
-        }
+    //public Trip(string destination, Countries country, int numOfTravels,TripTypes tripTypes) : base(destination,country,numOfTravels)
+    //{
+    //    Type = tripTypes;
+    //}
 
-        //public string GetInfo()
-        //{
-
-        //}
-    }
+    //public override string GetInfo()
+    //{
+    //    return base.GetInfo();
+    //}
 }

@@ -36,10 +36,20 @@ namespace TravelPal
         // Function for when change username button is click
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            string newUsername = txtNewUsername.Text;
+            if(txtNewUsername.Text.Length >= 5)
+            {
+                string newUsername = txtNewUsername.Text;
 
-            //userManager.SignedInUser.username = newUsername;
-            this.NewUsername = newUsername;
+                //userManager.SignedInUser.username = newUsername;
+                this.NewUsername = newUsername;
+            }
+            else
+            {
+                MessageBox.Show("The username should be at least five letters");
+            }
+            
+
+            
 
             Close();
         }

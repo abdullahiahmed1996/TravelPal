@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TravelPal.Enums;
 using TravelPal.Manage;
+using TravelPal.Travel;
 
 namespace TravelPal
 {
@@ -21,14 +22,17 @@ namespace TravelPal
     /// </summary>
     public partial class RegisterWindow : Window
     {
-        UserManager userManager = new();
+        private UserManager userManager;
+        private readonly TravelManager travelManager;
+        
 
         // Costructor
-        public RegisterWindow(UserManager userManager)
+        public RegisterWindow(UserManager userManager, TravelManager travelManager)
         {
             InitializeComponent();
 
             this.userManager = userManager;
+            this.travelManager = travelManager;
             string[] location = Enum.GetNames(typeof(Countries));
             cbCountry.ItemsSource = location;
 
@@ -40,6 +44,11 @@ namespace TravelPal
             string password = pswPassword.Password;
             string location = cbCountry.SelectedItem as string;
 
+
+                //userManager.SignedInUser.username = newUsername;
+
+
+         
             if (location != null)
             {
                 Countries country = (Countries)Enum.Parse(typeof(Countries), location); 

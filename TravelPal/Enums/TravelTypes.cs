@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TravelPal.Enums
 {
-    public enum  TripType
+    public enum  TravelTypes
     {
         Vacation,
         Trip

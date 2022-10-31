@@ -13,6 +13,6 @@ namespace TravelPal.Travel
         public Countries Country { get; set; }
         public int Travellers { get; set; }
 
-        public int TravelDays { get; set; }
+        //public int TravelDays { get; set; }
     }
 }

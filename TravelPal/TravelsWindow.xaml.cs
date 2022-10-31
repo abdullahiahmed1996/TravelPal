@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TravelPal.Enums;
 using TravelPal.Manage;
+using TravelPal.Travel;
 
 namespace TravelPal
 {
@@ -22,7 +23,9 @@ namespace TravelPal
     public partial class TravelsWindow : Window
     {
         UserManager userManager;
-        public TravelsWindow(UserManager userManager)
+        TravelManager travelManager;
+
+        public TravelsWindow(UserManager userManager, TravelManager travelManager)
         {
             
             string[] location = Enum.GetNames(typeof(Countries));
@@ -33,6 +36,7 @@ namespace TravelPal
             InitializeComponent();
 
             this.userManager = userManager;
+            this.travelManager = travelManager;
 
             lblUsername.Content = userManager.SignedInUser.username;
 
@@ -43,7 +47,7 @@ namespace TravelPal
         // Function to open AddTrave window
         private void btnAddTravel_Click(object sender, RoutedEventArgs e)
         {
-            AddTravelWindow addTravelWindow = new(userManager);
+            AddTravelWindow addTravelWindow = new(userManager, travelManager);
 
             addTravelWindow.Show();
         }
@@ -60,7 +64,7 @@ namespace TravelPal
         {
             
 
-            MainWindow mainWindow = new(userManager);
+            MainWindow mainWindow = new(userManager,travelManager);
             mainWindow.Show();
 
             Close();

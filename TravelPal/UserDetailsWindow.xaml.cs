@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TravelPal.Enums;
 using TravelPal.Manage;
+using TravelPal.Travel;
 
 namespace TravelPal
 {
@@ -23,6 +24,7 @@ namespace TravelPal
     {
 
         private UserManager userManager;
+        private readonly TravelManager travelManager;
         public string newUsername;
         private string newPassword;
         private Countries newCountry;
@@ -99,7 +101,7 @@ namespace TravelPal
                 userManager.SignedInUser.location = newCountry;
             }
 
-            TravelsWindow travelsWindow = new(userManager);
+            TravelsWindow travelsWindow = new(userManager,travelManager);
             travelsWindow.Show();
             Close();
         }
@@ -110,7 +112,7 @@ namespace TravelPal
         {
             
 
-            TravelsWindow travelsWindow = new(userManager);
+            TravelsWindow travelsWindow = new(userManager, travelManager);
             travelsWindow.Show();
             Close();
         }
