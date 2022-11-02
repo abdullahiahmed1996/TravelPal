@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TravelPal.Enums;
 using TravelPal.Manage;
-using TravelPal.Travel;
+using TravelPal.Travels;
 
 namespace TravelPal
 {
@@ -28,7 +28,7 @@ namespace TravelPal
         
 
         // Costructor
-        public RegisterWindow(UserManager userManager)
+        public RegisterWindow(UserManager userManager,TravelManager travelManager)
         {
             InitializeComponent();
 
@@ -45,7 +45,7 @@ namespace TravelPal
             string password = pswPassword.Password;
             string country = cbCountry.SelectedItem as string;
 
-
+            Countries countries = (Countries)Enum.Parse(typeof(Countries),country);
             //userManager.SignedInUser.username = newUsername;
 
 
@@ -53,15 +53,16 @@ namespace TravelPal
             {
                 if (username.Count() == 0 || password.Count() == 0 || country.Count() == 0)
                 {
-                    MessageBox.Show("Error! Please fill in all the information!");
-                              
+                    MessageBox.Show("Please fill in all the information!", "ERROR");
+
                 }
                 else
                 {
-                    Countries countries = (Countries)Enum.Parse(typeof(Countries),country);
 
-                    if(userManager.AddUser(txtUsername.Text, pswPassword.Password, countries))
-                    {
+
+                    if (this.userManager.AddUser(username,password,countries))
+                    {   
+                        
                         MainWindow mainWindow = new (userManager,travelManager);
                         mainWindow.Show();
                         Close();

@@ -6,19 +6,21 @@ using System.Text;
 using System.Threading.Tasks;
 using TravelPal.Enums;
 
-namespace TravelPal.Manage
+namespace TravelPal.Manage;
+
+public interface IUser
 {
-    public interface IUser
+    // Properties
+    public string username { get; set; }
+    public string password { get; set; }
+    public Countries location { get; set; }
+
+    public bool isAdmin { get; }
+
+
+
+    public void IUser(string username, string password, Countries location)
     {
-        // Properties
-        public string username { get; set; }
-        public string password { get; set; }
-        public Countries location { get; set; }
 
-        public bool isAdmin { get; }
-
-
-
-        //public void IUser(string username, string password, Countries location);
     }
 }

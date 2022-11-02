@@ -45,7 +45,7 @@ namespace TravelPal
             }
             else
             {
-                MessageBox.Show("The username should be at least five letters");
+                MessageBox.Show("The username should be at least 5 letters");
             }
             
 

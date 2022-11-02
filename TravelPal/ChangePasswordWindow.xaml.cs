@@ -23,7 +23,7 @@ namespace TravelPal
         private UserManager userManager;
         
 
-        public string NewPassword { get; set; }
+        public string newPassword { get; set; }
 
 
         // Constructor
@@ -37,13 +37,21 @@ namespace TravelPal
         // Function for when change password button is click
         public void btnChangePassword_Click(object sender, RoutedEventArgs e)
         {
-            
+            if(txtNewPassword.Text.Length >= 5)
+            {
+                string newPassword = txtNewPassword.Text;
+                this.newPassword = newPassword;
+            }
+            else
+            {
+                MessageBox.Show("The password should be at least 5 characters");
+            }
 
             if(txtNewPassword.Text == txtConfirmPassword.Text)
             {
                 string newPassword = txtConfirmPassword.Text;
                 //userManager.SignedInUser.password = newPassword;
-                this.NewPassword = newPassword;
+                this.newPassword = newPassword;
                 Close();
 
             }

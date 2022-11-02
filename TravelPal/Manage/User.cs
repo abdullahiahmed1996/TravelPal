@@ -5,27 +5,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using TravelPal.Enums;
+using TravelPal.Travels;
 
-namespace TravelPal.Manage
+namespace TravelPal.Manage;
+
+public  class User:IUser
 {
-    public  class User:IUser
+    // Properteis
+    public string username { get; set; }
+    public string password { get; set; }
+    public Countries location { get; set; }
+
+    public bool isAdmin { get; set; }
+
+    public List<Travel> travels { get; set; } = new();
+
+    // Constuctor
+    public User(string username,string password,Countries location)
     {
-        // Properteis
-        public string username { get; set; }
-        public string password { get; set; }
-        public Countries location { get; set; }
-
-        public bool isAdmin { get; set; }
-
-        //public List<Travel> Travels { get; set; } = new();
-
-        // Constuctor
-        public User(string username,string password,Countries location)
-        {
-            username = username;
-            password = password;
-            location = location;
-        }
-
+        username = username;
+        password = password;
+        location = location;
     }
+
 }

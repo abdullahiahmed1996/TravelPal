@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TravelPal.Enums;
 using TravelPal.Manage;
-using TravelPal.Travel;
+using TravelPal.Travels;
 
 namespace TravelPal
 {
@@ -30,12 +30,13 @@ namespace TravelPal
         private Countries newCountry;
 
         // Constuctor
-        public UserDetailsWindow(UserManager userManager)
+        public UserDetailsWindow(UserManager userManager, TravelManager travelManager)
         {
             
             InitializeComponent();
 
             this.userManager = userManager;
+            this.travelManager = travelManager;
             string[] location = Enum.GetNames(typeof(Countries));
             cbNewCountry.ItemsSource = location;
 
@@ -63,10 +64,10 @@ namespace TravelPal
             ChangePasswordWindow changePasswordWindow = new(userManager);
             changePasswordWindow.ShowDialog();
 
-            if (!string.IsNullOrEmpty(changePasswordWindow.NewPassword))
+            if (!string.IsNullOrEmpty(changePasswordWindow.newPassword))
             {
-                newPassword = changePasswordWindow.NewPassword;
-                lblPassword.Content = changePasswordWindow.NewPassword;
+                newPassword = changePasswordWindow.newPassword;
+                lblPassword.Content = changePasswordWindow.newPassword;
 
             }
         }
@@ -101,8 +102,8 @@ namespace TravelPal
                 userManager.SignedInUser.location = newCountry;
             }
 
-            TravelsWindow travelsWindow = new(userManager,travelManager);
-            travelsWindow.Show();
+            TravelWindow travelWindow = new(userManager,travelManager);
+            travelWindow.Show();
             Close();
         }
 
@@ -112,8 +113,8 @@ namespace TravelPal
         {
             
 
-            TravelsWindow travelsWindow = new(userManager, travelManager);
-            travelsWindow.Show();
+            TravelWindow travelWindow = new(userManager, travelManager);
+            travelWindow.Show();
             Close();
         }
 

@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="AddTravelWindow.xaml.cs">
+    <Compile Update="AddTravelsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ChangePasswordWindow.xaml.cs">
@@ -19,10 +19,10 @@
     <Compile Update="RegisterWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="TravelDetailsWindow.xaml.cs">
+    <Compile Update="TravelDetailWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="TravelsWindow.xaml.cs">
+    <Compile Update="TravelWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserDetailsWindow.xaml.cs">
@@ -30,7 +30,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="AddTravelWindow.xaml">
+    <Page Update="AddTravelsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ChangePasswordWindow.xaml">
@@ -45,10 +45,10 @@
     <Page Update="RegisterWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="TravelDetailsWindow.xaml">
+    <Page Update="TravelDetailWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="TravelsWindow.xaml">
+    <Page Update="TravelWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserDetailsWindow.xaml">

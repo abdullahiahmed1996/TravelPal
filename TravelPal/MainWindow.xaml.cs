@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TravelPal.Enums;
 using TravelPal.Manage;
-using TravelPal.Travel;
+using TravelPal.Travels;
 
 namespace TravelPal
 {
@@ -31,8 +31,8 @@ namespace TravelPal
         {
             InitializeComponent();
 
-            UserManager userManager = new();
-            TravelManager travelManager = new();
+            this.userManager = new();
+            this.travelManager = new();
         }
         //Constructor
         public MainWindow(UserManager userManager, TravelManager travelManager)
@@ -46,7 +46,7 @@ namespace TravelPal
         // Function for when register button is click
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            RegisterWindow registerWindow = new(userManager);
+            RegisterWindow registerWindow = new(userManager,travelManager);
 
             registerWindow.Show();
 
@@ -63,8 +63,8 @@ namespace TravelPal
             {
                 userManager.SignedInUser =  userManager.GetUser(username);
                 // log in
-                TravelsWindow travelsWindow = new(userManager,travelManager);
-                travelsWindow.Show();
+                TravelWindow travelWindow = new(userManager,travelManager);
+                travelWindow.Show();
                 Close();
             }
 
