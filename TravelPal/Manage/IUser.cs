@@ -11,16 +11,16 @@ namespace TravelPal.Manage;
 public interface IUser
 {
     // Properties
-    public string username { get; set; }
-    public string password { get; set; }
-    public Countries location { get; set; }
+    public string Username { get; set; }
+    public string Password { get; set; }
+    public Countries Location { get; set; }
 
-    public bool isAdmin { get; }
+    //public bool isAdmin { get; }
 
 
 
-    public void IUser(string username, string password, Countries location)
-    {
+    //public void IUser(string username, string password, Countries location)
+    //{
 
-    }
+    //}
 }

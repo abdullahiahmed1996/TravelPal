@@ -36,9 +36,41 @@ namespace TravelPal
             this.userManager = userManager;
             this.travelManager = travelManager;
 
-            lblUsername.Content = userManager.SignedInUser.username;
+            lblUsername.Content = userManager.SignedInUser.Username;
+
+            UpdateWindow();
 
            
+        }
+
+        private void UpdateWindow()
+        {
+            lvDisplay.Items.Clear();
+
+            if(this.userManager.SignedInUser is User)
+            {
+                User signedInUser = this.userManager.SignedInUser as User;
+
+                foreach(var travel in signedInUser.Travels)
+                {
+                    ListViewItem item = new();
+                    item.Content = travel.GetInfo;
+                    item.Tag = travel;
+                    lvDisplay.Items.Add(item);
+                }
+            }
+            else if(this.userManager.SignedInUser is Admin)
+            {
+                IUser signedInAdmin = this.userManager.SignedInUser as Admin;
+
+                foreach(var travel in travelManager.Travels)
+                {
+                    ListViewItem item = new();
+                    item.Content = travel.GetInfo();
+                    item.Tag = travel;
+                    lvDisplay.Items.Add(item);
+                }
+            }
         }
 
         // Function to open AddTrave window
@@ -91,7 +123,33 @@ namespace TravelPal
         // Remove function
         private void btnRemove_Click(object sender, RoutedEventArgs e)
         {
+            ListViewItem selectedItem = lvDisplay.SelectedItem as ListViewItem;
 
+            if(selectedItem != null)
+            {
+                Travel selectedTravel = selectedItem.Tag as Travel;
+
+                travelManager.RemoveTravel(selectedTravel);
+
+
+                if(userManager.SignedInUser is User)
+                {
+                    User signedInUser = userManager.SignedInUser as User;
+                    signedInUser.Travels.Remove(selectedTravel);
+                    userManager.SignedInUser = signedInUser;
+                }
+            }
+ 
+            else
+            {
+                MessageBox.Show("Fill in a travel type!");
+            }
+        }
+
+        private void lvDisplay_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnRemove.IsEnabled = true;
+            btnDetails.IsEnabled = true;
         }
     }
 }

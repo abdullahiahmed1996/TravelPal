@@ -10,25 +10,28 @@ namespace TravelPal.Travels;
 
 public class TravelManager
 {
-    public List<Travel> travels { get; set; } = new();
+    public List<Travel> Travels { get; set; } = new();
     UserManager userManager;
 
     public Travel AddTravel(string orginDestination, Countries country, int numOfTravellers,TripTypes tripTypes)
     {
         Trip trip = new(tripTypes, orginDestination, country, numOfTravellers);
-        travels.Add(trip);
+        Travels.Add(trip);
         return trip;
     }
 
     public Travel AddTravel(bool allInclusive, string orginDestination, Countries country, int numOfTravellers)
     {
         Vacation vacation = new(orginDestination, country, numOfTravellers, allInclusive);
-        travels.Add(vacation);
+        Travels.Add(vacation);
         return vacation;
     }
 
-    public void RemoveTravel()
+    public void RemoveTravel(Travel travelToRemove)
     {
-
+        if(Travels.Contains(travelToRemove))
+        {
+            Travels.Remove(travelToRemove);
+        }
     }
 }

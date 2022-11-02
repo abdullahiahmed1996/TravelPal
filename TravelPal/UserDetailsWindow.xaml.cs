@@ -40,9 +40,9 @@ namespace TravelPal
             string[] location = Enum.GetNames(typeof(Countries));
             cbNewCountry.ItemsSource = location;
 
-            lblUsername.Content = userManager.SignedInUser.username;
-            lblPassword.Content = userManager.SignedInUser.password;
-            lblCountry.Content = userManager.SignedInUser.location.ToString();
+            lblUsername.Content = userManager.SignedInUser.Username;
+            lblPassword.Content = userManager.SignedInUser.Password;
+            lblCountry.Content = userManager.SignedInUser.Location.ToString();
         }
 
         // Open the ChangeUsername window
@@ -91,15 +91,15 @@ namespace TravelPal
             //string newContry = cbNewCountry.Text;
             if(!string.IsNullOrEmpty(this.newUsername))
             {
-                userManager.SignedInUser.username = newUsername;
+                userManager.SignedInUser.Username = newUsername;
             }
             if(!string.IsNullOrEmpty (this.newPassword))
             {
-                userManager.SignedInUser.password = newPassword;
+                userManager.SignedInUser.Password = newPassword;
             }
             if(this.newCountry != null)
             {
-                userManager.SignedInUser.location = newCountry;
+                userManager.SignedInUser.Location = newCountry;
             }
 
             TravelWindow travelWindow = new(userManager,travelManager);

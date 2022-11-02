@@ -1,98 +1,136 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using TravelPal.Enums;
+using TravelPal.Travels;
 
 namespace TravelPal.Manage;
 
-public class UserManager
+public class UserManager : IUser
 {
+    public string Username { get; set; }
+    public string Password { get; set; }
+    public Countries Location { get; set; }
     // Make new list with users
-    public List<IUser> users = new();
+    public List<IUser> Users { get; set; } = new();
     // Signed in user
     public IUser SignedInUser { get; set; }
+    
 
     public UserManager()
     {
-        DefaultUsers();
+        this.Users = Users;
+
+        AddAdmin();
+        AddGandalf();
+
     }
 
-    private void DefaultUsers()
+    private void AddGandalf()//KEEP
     {
-        Admin admin = new("admin","password");
+        User user = new("gandolf", "password", Countries.South_Africa);
+        Users.Add(user);
 
-        User defaultUser = new("Gandalf", "password" , Countries.South_Africa);
+        Trip trip1 = new(TripTypes.Leisure, "Christ the Redeemer", Countries.Brazil,1);
+        user.Travels.Add(trip1);
 
-        //List<Travel> travels = new();
+        Vacation vacation1 = new("Mount Kilimanjaro", Countries.Tanzania, 4, true);
+        user.Travels.Add(vacation1);
     }
 
+    private void AddAdmin()//KEEP
+    {
+        Admin admin = new("admin","password",Countries.Japan);
+        Users.Add(admin);
+    }
 
-
-
-    // Add user with new username, password and location
+    // Add user with new username, password and location (KEEP)
     public bool AddUser(string username,string password,Countries country)
     {
-        User user = new(username, password, country);
-        user.username = username;
-        user.password = password;
-        user.location = country;
-
-        users.Add(user);
-
-        return true;
-
-    }
-
-    // Make new list with all users
-    public List<IUser> GetAllUsers()
-    {
-        return users;
-    }
-
-    public bool SignInUser(string username, string password)
-    {
-        // Loop through all users
-        foreach(User user in users)
+        if(VaidateUsername(username))
         {
-            // Check is the username and password are the same
-            if(user.username == username && user.password == password)
+            
             {
+                User users = new(username, password, country);
+                Users.Add(users);
                 return true;
             }
         }
-
-        return false;
-
-    } 
-
-    // Get users username
-    public IUser GetUser(string username)
-    {
-        foreach(IUser user in users)
+        else
         {
-            if(user.username == username)
-            {
-                return user;
-            }
-            
+            return false;
         }
-        return null;
     }
 
-         //public void RemoveUser(IUser)
+    // Make new list with all users
+    //public List<IUser> GetAllUsers()
     //{
+    //    return Users;
+    //}
+
+    //public bool SignInUser(string username, string password)
+    //{
+    //    // Loop through all users
+    //    foreach (User user in Users)
+    //    {
+    //        // Check is the username and password are the same
+    //        if (user.Username == username && user.Password == password)
+    //        {
+    //            return true;
+    //        }
+    //    }
+
+    //    return false;
 
     //}
 
-    //public bool UpdateUsername(IUser, string)
+    // Get users username
+    //public IUser GetUser(string username)
     //{
-
+    //    foreach(IUser user in Users)
+    //    {
+    //        if(user.Username == username)
+    //        {
+    //            return user;
+    //        }
+            
+    //    }
+    //    return null;
     //}
 
-    //private bool VaidateUsername(username)
+    public bool UpdateUsername(IUser user, string username)//KEEP
+    {
+        return false;
+    }
+
+    private bool VaidateUsername(string username)//KEEP
+    {
+        bool isInavalidUsername = false;
+
+        foreach(IUser user in Users)
+        {
+            if(user.Username == username)
+            {
+                isInavalidUsername = true;
+            }
+        }
+        if(!isInavalidUsername)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
+    //public void RemoveUser(IUser)
     //{
 
     //}

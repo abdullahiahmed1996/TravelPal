@@ -26,15 +26,25 @@ namespace TravelPal
         UserManager userManager;
         TravelManager travelManager;
 
-        // Constructor
+        // Constructor no.2
         public MainWindow()
         {
             InitializeComponent();
 
             this.userManager = new();
             this.travelManager = new();
+
+            foreach (IUser user in userManager.Users)
+            {
+                if(user is User)
+                {
+                    User u = user as User;
+                    travelManager.Travels.AddRange(u.Travels);
+                }
+            }
+
         }
-        //Constructor
+        //Constructor no.2
         public MainWindow(UserManager userManager, TravelManager travelManager)
         {
             InitializeComponent();
@@ -49,6 +59,7 @@ namespace TravelPal
             RegisterWindow registerWindow = new(userManager,travelManager);
 
             registerWindow.Show();
+            Close();
 
         }
 
@@ -57,23 +68,29 @@ namespace TravelPal
         {
             string username = txtUsername.Text;
             string password = pswPassword.Password;
-            
-            
-           if(userManager.SignInUser(username, password))
-            {
-                userManager.SignedInUser =  userManager.GetUser(username);
-                // log in
-                TravelWindow travelWindow = new(userManager,travelManager);
-                travelWindow.Show();
-                Close();
-            }
+            bool isFoundUser = false;
 
-           // If username or password was incorrect show a message box
-           else
+            foreach(IUser user in userManager.Users)
             {
-                MessageBox.Show("Username or password is incorrect", "Warning");
+                if(user.Username == username && user.Password == password)
+                {// log in
+
+                    isFoundUser = true;
+                    userManager.SignedInUser = user;
+
+                    TravelWindow travelWindow = new(userManager,travelManager);
+                    travelWindow.Show();
+                    Close();            
+                }
+
+                    // If username or password was incorrect show a message box
+                if(!isFoundUser)
+                {
+                     MessageBox.Show("Username or password is incorrect", "Warning");
+                }
 
             }
+           
         }
     }
 }

@@ -11,17 +11,18 @@ namespace TravelPal.Manage;
 public class Admin : IUser
 {
     // Properties
-    public string username { get; set; }
-    public string password { get; set; }
-    public Countries location { get; set; }
+    public string Username { get; set; }
+    public string Password { get; set; }
+    public Countries Location { get; set; }
 
     public bool isAdmin { get; set; } = true;
 
     // Constructor with inputs
-    public Admin(string username, string password)
+    public Admin(string username, string password, Countries location)
     {
-        username = username;
-        password = password;
+        Username = username;
+        Password = password;
+        Location = location;
         
     }
 

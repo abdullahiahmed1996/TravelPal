@@ -46,22 +46,6 @@ namespace TravelPal
             cbTripTypes.ItemsSource = tripType;
         }
 
-        private void cbTrevelType_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            selectedTravelType = cbTrevelType.SelectedItem as string;
-
-            if (selectedTravelType == "Trip")
-            {
-                cbTripTypes.Visibility = Visibility.Visible;
-                xbAllInclusive.Visibility = Visibility.Hidden;
-            }
-            else if (selectedTravelType == "Vacation")
-            {
-                xbAllInclusive.Visibility = Visibility.Visible;
-                cbTripTypes.Visibility = Visibility.Hidden;
-            }
-        }
-
         private void btnAddTravel_Click(object sender, RoutedEventArgs e)
         {
             string orginCountry = txtOrginCountry.Text;
@@ -69,43 +53,77 @@ namespace TravelPal
             int numberOfTravelers = Convert.ToInt32(txtNumOfTravellers.Text);
             Countries country = (Countries)Enum.Parse(typeof(Countries), travelDestination);
 
-
-
-
-            if (selectedTravelType == "Trip")
+            try
             {
-                string tripTypeString = cbTripTypes.SelectedItem as string;
+                if (selectedTravelType == "Trip")
+                {
+                    string tripTypeString = cbTripTypes.SelectedItem as string;
 
-                TripTypes tripType = (TripTypes)Enum.Parse(typeof(TripTypes), tripTypeString);
+                    TripTypes tripType = (TripTypes)Enum.Parse(typeof(TripTypes), tripTypeString);
 
-                Travel newTravel = travelManager.AddTravel(orginCountry, country, numberOfTravelers, tripType);
+                    Travel newTravel = travelManager.AddTravel(orginCountry, country, numberOfTravelers, tripType);
 
-            if (userManager.SignedInUser is User)
-            {
-                User user = userManager.SignedInUser as User;
+                    if (userManager.SignedInUser is User)
+                    {
+                        User user = userManager.SignedInUser as User;
 
-                user.travels.Add(newTravel);
+                        user.Travels.Add(newTravel);
 
-                userManager.SignedInUser = user;
+                        userManager.SignedInUser = user;
+                    }
+                }
+                else if (selectedTravelType == "Vacation")
+                {
+                    bool allInclusive = (bool)xbAllInclusive.IsChecked;
+
+                    Travel newTravel = travelManager.AddTravel(allInclusive, orginCountry, country, numberOfTravelers);
+
+                    if (userManager.SignedInUser is User)
+                    {
+                        User user = userManager.SignedInUser as User;
+
+                        user.Travels.Add(newTravel);
+
+                        userManager.SignedInUser = user;
+                    }
+                }
+
+                TravelWindow travelWindow = new(userManager, travelManager);
+                travelWindow.Show();
+                Close();
             }
-
-
-        }
-            else if (selectedTravelType == "Vacation")
+            catch(Exception ex)
             {
-                bool allInclusive = (bool)xbAllInclusive.IsChecked;
-
-                Travel newTravel = travelManager.AddTravel(allInclusive, orginCountry, country, numberOfTravelers);
-
-            if (userManager.SignedInUser is User)
-            {
-                User user = userManager.SignedInUser as User;
-
-                user.travels.Add(newTravel);
-
-                userManager.SignedInUser = user;
+                MessageBox.Show(ex.Message);
             }
         }
+        private void cbTrevelType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.selectedTravelType = cbTrevelType.SelectedItem as string;
+
+            try
+            {
+                if (selectedTravelType == "Trip")
+                {
+                    cbTripTypes.Visibility = Visibility.Visible;
+                    xbAllInclusive.Visibility = Visibility.Hidden;
+                }
+                else if (selectedTravelType == "Vacation")
+                {
+                    xbAllInclusive.Visibility = Visibility.Visible;
+                    cbTripTypes.Visibility = Visibility.Hidden;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        } 
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            TravelWindow travelWindow = new(userManager, travelManager);
+            travelWindow.Show();
+            Close();
         }
     }
 }

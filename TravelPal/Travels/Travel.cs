@@ -19,8 +19,8 @@ public class Travel
 
     public Travel(string destination, Countries country, int numOfTravellers)
     {
-        Destination = destination;
-        Country = country;
+        this.Destination = destination;
+        this.Country = country;
         this.numOfTravellers = numOfTravellers;
     }
 
