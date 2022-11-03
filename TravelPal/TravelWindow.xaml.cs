@@ -24,6 +24,8 @@ namespace TravelPal
     {
         UserManager userManager;
         TravelManager travelManager;
+        Travel travel;
+
         public TravelWindow(UserManager userManager, TravelManager travelManager)
         {
             string[] location = Enum.GetNames(typeof(Countries));
@@ -113,8 +115,19 @@ namespace TravelPal
         // Open DetailsWindow
         private void btnDetails_Click(object sender, RoutedEventArgs e)
         {
-            TravelDetailWindow travelDetailWindow = new(userManager, travelManager);
-            travelDetailWindow.Show();
+            ListViewItem selectedItem = lvDisplay.SelectedItem as ListViewItem;
+
+            if (selectedItem != null)
+            {
+                Travel selectedTravel = selectedItem.Tag as Travel;
+                TravelDetailWindow travelDetailWindow = new TravelDetailWindow(userManager,travelManager,travel);
+                travelDetailWindow.Show();
+            }
+            else
+            {
+                MessageBox.Show("Fill in a selected travel!");
+            }
+           
 
             Close();
 

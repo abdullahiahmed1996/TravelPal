@@ -23,10 +23,19 @@ public partial class TravelDetailWindow : Window
 {
     private readonly UserManager userManager;
     private readonly TravelManager travelManager;
-    public TravelDetailWindow(UserManager userManager, TravelManager travelManager)
+    private readonly Travel travel;
+    public TravelDetailWindow(UserManager userManager, TravelManager travelManager, Travel travel)
     {
         InitializeComponent();
         this.userManager = userManager;
         this.travelManager = travelManager;
+        this.travel = travel;   
+    }
+
+    private void btnCancel_Click(object sender, RoutedEventArgs e)
+    {
+        TravelWindow travelWindow = new(userManager, travelManager);
+        travelWindow.Show();
+        Close();
     }
 }

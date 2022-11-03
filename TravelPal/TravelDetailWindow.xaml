@@ -14,6 +14,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -22,22 +23,102 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
         </Grid.RowDefinitions>
 
         <Label
-            Grid.Column="2"
-            Content="Travel Details"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Foreground="MintCream"
-            FontSize="40"
-            Grid.ColumnSpan="2"/>
-
-        <ListView
-            Grid.Column="2"
-            Grid.Row="1"
-            Grid.ColumnSpan="2"
-            Grid.RowSpan="4"
-            FontSize="20"/>
+        Grid.Column="2"
+        Content="Travel Details"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"
+        Foreground="MintCream"
+        FontSize="35"
+        Grid.ColumnSpan="3"
+        Grid.RowSpan="2"    />
+        <Label
+        Grid.Column="1"
+        Grid.Row="2"
+        Content="Destination:"
+        Foreground="MintCream"
+        FontSize="18"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"/>
+        <Label
+        Grid.Column="1"
+        Grid.Row="3"
+        Content="Country:"
+        FontSize="20"
+        Foreground="MintCream"    
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"/>
+        <Label
+        Grid.Column="1"
+        Grid.Row="4"
+        Content="Travelers:"
+        FontSize="20"
+        Foreground="MintCream"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"/>
+        <Label
+        Grid.Column="1"
+        Grid.Row="5"
+        Content="Travel type:"
+        FontSize="20"
+        Foreground="MintCream"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"/>
+        <Label
+        Grid.Column="1"
+        Grid.Row="6"
+        Content="Travel Info:"
+        FontSize="20"
+        Foreground="MintCream"    
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"/>
+        <Label
+        x:Name="lbDestination"
+        Grid.Column="2"
+        Grid.Row="2"
+        FontSize="20"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"/>
+        <Label
+        x:Name="lbCountry"
+        Grid.Column="2"
+        Grid.Row="3"
+        FontSize="20"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"/>
+        <Label
+        x:Name="lbAmountOfTravelers"
+        Grid.Column="2"
+        Grid.Row="4"
+        FontSize="20"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"/>
+        <Label
+        x:Name="lbTravelType"
+        Grid.Column="2"
+        Grid.Row="5"
+        FontSize="20"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"/>
+        <Label
+        x:Name="lbTravelInfo"
+        Grid.Column="2"
+        Grid.Row="6"
+        FontSize="15"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"/>
+        <Button
+        x:Name="btnCancel"
+        Grid.Column="4"
+        Grid.Row="7"
+        Content="Back"
+        FontSize="15"
+        Click ="btnCancel_Click"
+        />
     </Grid>
 </Window>
