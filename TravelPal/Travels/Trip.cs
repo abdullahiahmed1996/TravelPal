@@ -21,6 +21,17 @@ public class Trip : Travel
 
     public override string GetInfo()
     {
-        return $"Trip to {base.Country}";
+        return $"{Country}";
     }
+
+    public override string GetTravelType()
+    {
+        return "Trip";
+    }
+
+    public override string GetTravelInfo()
+    {
+        return $"{Type}";
+    }
+
 }

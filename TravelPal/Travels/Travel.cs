@@ -11,9 +11,11 @@ namespace TravelPal.Travels;
 
 public class Travel
 {
-    public string Destination { get; set; }
     public Countries Country { get; set; }
     public int numOfTravellers { get; set; }
+    public string Destination { get; set; }
+    
+    
 
     //public int TravelDays { get; set; }
 
@@ -26,8 +28,16 @@ public class Travel
 
     public virtual string GetInfo()
     {
-        return $"{Destination} / {Country} / number of travellers {numOfTravellers}";
+        return $"{Country}";
     }
 
-   
+   public virtual string GetTravelType()
+   {
+        return "TravelType";
+   }
+
+    public virtual string GetTravelInfo()
+    {
+        return "TravelInfo";
+    }
 }

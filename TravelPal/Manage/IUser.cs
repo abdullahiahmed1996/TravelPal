@@ -15,12 +15,5 @@ public interface IUser
     public string Password { get; set; }
     public Countries Location { get; set; }
 
-    //public bool isAdmin { get; }
-
-
-
-    //public void IUser(string username, string password, Countries location)
-    //{
-
-    //}
+   
 }

@@ -26,7 +26,7 @@ namespace TravelPal
         UserManager userManager;
         TravelManager travelManager;
 
-        // Constructor no.2
+        // Constructor no.1
         public MainWindow()
         {
             InitializeComponent();

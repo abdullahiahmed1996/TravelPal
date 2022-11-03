@@ -34,8 +34,8 @@ namespace TravelPal
 
             this.userManager = userManager;
             this.travelManager = travelManager;
-            string[] location = Enum.GetNames(typeof(Countries));
-            cbCountry.ItemsSource = location;
+            
+            cbCountry.ItemsSource = Enum.GetNames(typeof(Countries));
 
         }
 
@@ -45,7 +45,7 @@ namespace TravelPal
             string password = pswPassword.Password;
             string country = cbCountry.SelectedItem as string;
 
-            Countries countries = (Countries)Enum.Parse(typeof(Countries),country);
+            
             //userManager.SignedInUser.username = newUsername;
 
 
@@ -58,9 +58,9 @@ namespace TravelPal
                 }
                 else
                 {
+                    Countries selectedCountry = (Countries)Enum.Parse(typeof(Countries),country);
 
-
-                    if (this.userManager.AddUser(username,password,countries))
+                    if (this.userManager.AddUser(username,password, selectedCountry))
                     {   
                         
                         MainWindow mainWindow = new (userManager,travelManager);

@@ -29,7 +29,20 @@ public partial class TravelDetailWindow : Window
         InitializeComponent();
         this.userManager = userManager;
         this.travelManager = travelManager;
-        this.travel = travel;   
+        this.travel = travel;
+
+        UppdateDetails();
+    }
+
+    private void UppdateDetails()
+    {
+        
+        lbCountry.Content = travel.Country;
+        lbDestination.Content = travel.Destination;
+        lbNumOfTravellers.Content = travel.numOfTravellers;
+        lbTravelType.Content = travel.GetTravelType();
+        lbTravelInfo.Content = travel.GetTravelInfo();
+
     }
 
     private void btnCancel_Click(object sender, RoutedEventArgs e)

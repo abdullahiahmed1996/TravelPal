@@ -22,22 +22,18 @@ namespace TravelPal
     /// </summary>
     public partial class TravelWindow : Window
     {
-        UserManager userManager;
-        TravelManager travelManager;
+        private UserManager userManager;
+        private TravelManager travelManager;
         Travel travel;
 
         public TravelWindow(UserManager userManager, TravelManager travelManager)
         {
-            string[] location = Enum.GetNames(typeof(Countries));
-            // cbCountry.ItemsSource = location;
-
-
-
             InitializeComponent();
 
             this.userManager = userManager;
             this.travelManager = travelManager;
 
+            //
             lblUsername.Content = userManager.SignedInUser.Username;
 
             UpdateWindow();
@@ -81,6 +77,8 @@ namespace TravelPal
             AddTravelsWindow addTravelWindow = new(userManager, travelManager);
 
             addTravelWindow.Show();
+            
+            Close();
         }
 
 
@@ -120,7 +118,7 @@ namespace TravelPal
             if (selectedItem != null)
             {
                 Travel selectedTravel = selectedItem.Tag as Travel;
-                TravelDetailWindow travelDetailWindow = new TravelDetailWindow(userManager,travelManager,travel);
+                TravelDetailWindow travelDetailWindow = new TravelDetailWindow(userManager,travelManager,selectedTravel);
                 travelDetailWindow.Show();
             }
             else
@@ -151,6 +149,8 @@ namespace TravelPal
                     signedInUser.Travels.Remove(selectedTravel);
                     userManager.SignedInUser = signedInUser;
                 }
+
+                UpdateWindow();
             }
  
             else

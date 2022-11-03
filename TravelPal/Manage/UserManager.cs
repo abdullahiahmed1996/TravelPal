@@ -13,6 +13,7 @@ namespace TravelPal.Manage;
 
 public class UserManager : IUser
 {
+    // Properties
     public string Username { get; set; }
     public string Password { get; set; }
     public Countries Location { get; set; }
@@ -21,7 +22,7 @@ public class UserManager : IUser
     // Signed in user
     public IUser SignedInUser { get; set; }
     
-
+    // Constructor
     public UserManager()
     {
         this.Users = Users;
@@ -31,9 +32,9 @@ public class UserManager : IUser
 
     }
 
-    private void AddGandalf()//KEEP
+    private void AddGandalf()// Adding a gandalf user
     {
-        User user = new("gandolf", "password", Countries.South_Africa);
+        User user = new("gandalf", "password", Countries.South_Africa);
         Users.Add(user);
 
         Trip trip1 = new(TripTypes.Leisure, "Christ the Redeemer", Countries.Brazil,1);
@@ -43,16 +44,16 @@ public class UserManager : IUser
         user.Travels.Add(vacation1);
     }
 
-    private void AddAdmin()//KEEP
+    private void AddAdmin()// Adding a admin user
     {
         Admin admin = new("admin","password",Countries.Japan);
         Users.Add(admin);
     }
 
-    // Add user with new username, password and location (KEEP)
+    // Add user with new username, password and location
     public bool AddUser(string username,string password,Countries country)
     {
-        if(VaidateUsername(username))
+        if(ValidateUsername(username))
         {
             
             {
@@ -67,48 +68,14 @@ public class UserManager : IUser
         }
     }
 
-    // Make new list with all users
-    //public List<IUser> GetAllUsers()
-    //{
-    //    return Users;
-    //}
-
-    //public bool SignInUser(string username, string password)
-    //{
-    //    // Loop through all users
-    //    foreach (User user in Users)
-    //    {
-    //        // Check is the username and password are the same
-    //        if (user.Username == username && user.Password == password)
-    //        {
-    //            return true;
-    //        }
-    //    }
-
-    //    return false;
-
-    //}
-
-    // Get users username
-    //public IUser GetUser(string username)
-    //{
-    //    foreach(IUser user in Users)
-    //    {
-    //        if(user.Username == username)
-    //        {
-    //            return user;
-    //        }
-            
-    //    }
-    //    return null;
-    //}
-
-    public bool UpdateUsername(IUser user, string username)//KEEP
+    // Update the user with this method
+    public bool UpdateUsername(IUser user, string username)
     {
         return false;
     }
 
-    private bool VaidateUsername(string username)//KEEP
+    // Method to validate the username and to see if that username does excist
+    private bool ValidateUsername(string username)
     {
         bool isInavalidUsername = false;
 

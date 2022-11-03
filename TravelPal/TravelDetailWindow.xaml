@@ -82,41 +82,57 @@
         Grid.Column="2"
         Grid.Row="2"
         FontSize="20"
+        Height="40"
+        Width="310"    
+        Grid.ColumnSpan="3"
+        Foreground="MintCream"
         VerticalAlignment="Center"
-        HorizontalAlignment="Center"/>
+/>
         <Label
         x:Name="lbCountry"
         Grid.Column="2"
         Grid.Row="3"
         FontSize="20"
+        Height="40"
+        Width="310"
+        Foreground="MintCream"
         VerticalAlignment="Center"
-        HorizontalAlignment="Center"/>
+        Grid.ColumnSpan="3"/>
         <Label
-        x:Name="lbAmountOfTravelers"
+        x:Name="lbNumOfTravellers"
         Grid.Column="2"
         Grid.Row="4"
+        Height="40"
+        Width="310"
         FontSize="20"
+        Foreground="MintCream"
         VerticalAlignment="Center"
-        HorizontalAlignment="Center"/>
+        Grid.ColumnSpan="3"/>
         <Label
         x:Name="lbTravelType"
         Grid.Column="2"
         Grid.Row="5"
+        Height="40"
+        Width="310"
+        Foreground="MintCream"
         FontSize="20"
         VerticalAlignment="Center"
-        HorizontalAlignment="Center"/>
+        Grid.ColumnSpan="3"/>
         <Label
         x:Name="lbTravelInfo"
         Grid.Column="2"
         Grid.Row="6"
-        FontSize="15"
+        Height="40"
+        Width="310"
+        FontSize="20"
+        Foreground="MintCream"
         VerticalAlignment="Center"
-        HorizontalAlignment="Center"/>
+        Grid.ColumnSpan="3"/>
         <Button
         x:Name="btnCancel"
         Grid.Column="4"
         Grid.Row="7"
-        Content="Back"
+        Content="Cancel"
         FontSize="15"
         Click ="btnCancel_Click"
         />

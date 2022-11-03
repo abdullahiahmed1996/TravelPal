@@ -40,7 +40,7 @@
             Grid.Row="1"
             Grid.Column="2"
             Grid.ColumnSpan="2"
-            Content="TravelPal"
+            Content="Travel Pal"
             FontWeight="Bold"
             Foreground="MintCream"
             FontSize="40"

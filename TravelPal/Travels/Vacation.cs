@@ -20,4 +20,21 @@ public class Vacation : Travel
         return $"Travel to {Country}";
     }
 
+    public override string GetTravelType()
+    {
+        return "Vacation";
+    }
+
+    public override string GetTravelInfo()
+    {
+        if(AllInclusive)
+        {
+            return $"All inclusive";
+        }
+        else
+        {
+            return "Is not All inculsive";
+        }
+    }
+
 }
