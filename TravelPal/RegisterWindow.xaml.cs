@@ -45,7 +45,7 @@ namespace TravelPal
             string password = pswPassword.Password;
             string country = cbCountry.SelectedItem as string;
 
-            
+
             //userManager.SignedInUser.username = newUsername;
 
 
@@ -72,6 +72,7 @@ namespace TravelPal
                         MessageBox.Show("Sorry, this username is already in use. Please use another!");
                     }
                 }
+
             }
             catch (ArgumentNullException ex)
             {

@@ -8,10 +8,10 @@ using TravelPal.Enums;
 
 namespace TravelPal.Travels;
 
+// Trip class should inherit form Travel
 public class Trip : Travel
 {
-    //private string[] tripType;
-    //private int numOfTravellers;
+    // Properties
     public TripTypes Type { get; set; }
 
     public Trip(TripTypes types, string destination, Countries country, int numOfTravellers) : base(destination,country,numOfTravellers)

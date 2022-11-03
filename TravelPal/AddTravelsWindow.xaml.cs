@@ -33,9 +33,9 @@ namespace TravelPal
             this.travelManager = travelManager;
 
             string[] location = Enum.GetNames(typeof(Countries));
-            cbTravelDestination.ItemsSource = location;
+            cbCountry.ItemsSource = location;
 
-            string orginCountry = txtOrginCountry.Text;
+            string orginCountry = txtDestination.Text;
 
             string numOfTravelers = txtNumOfTravellers.Text;
 
@@ -49,10 +49,10 @@ namespace TravelPal
 
         private void btnAddTravel_Click(object sender, RoutedEventArgs e)
         {
-            string travelDestination = cbTravelDestination.SelectedItem as string;
+            string travelDestination = cbCountry.SelectedItem as string;
             Countries country = (Countries)Enum.Parse(typeof(Countries), travelDestination);
 
-            string orginCountry = txtOrginCountry.Text;
+            string orginCountry = txtDestination.Text;
             
             int numberOfTravelers = Convert.ToInt32(txtNumOfTravellers.Text);
             

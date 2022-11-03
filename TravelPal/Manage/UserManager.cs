@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics.Metrics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
@@ -11,6 +12,7 @@ using TravelPal.Travels;
 
 namespace TravelPal.Manage;
 
+// UserManager class should inherit form IUser
 public class UserManager : IUser
 {
     // Properties
@@ -26,15 +28,15 @@ public class UserManager : IUser
     public UserManager()
     {
         this.Users = Users;
-
-        AddAdmin();
-        AddGandalf();
+        
+        AddAdmin();// A admin method
+        AddGandalf();// A gandalf
 
     }
 
     private void AddGandalf()// Adding a gandalf user
     {
-        User user = new("gandalf", "password", Countries.South_Africa);
+        User user = new("Gandalf", "password", Countries.South_Africa);
         Users.Add(user);
 
         Trip trip1 = new(TripTypes.Leisure, "Christ the Redeemer", Countries.Brazil,1);
@@ -96,9 +98,16 @@ public class UserManager : IUser
         }
     }
 
+    private bool ValidatePassword(string password)
+    {
+        foreach(IUser user in Users)
+        {
+            if(user.Password == password)
+            {
+                return true;
+            }
+        }
+        return true;
+    }
 
-    //public void RemoveUser(IUser)
-    //{
-
-    //}
 }

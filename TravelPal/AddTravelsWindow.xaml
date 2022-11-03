@@ -38,14 +38,14 @@
         <Label
             Grid.Row="1"
             Grid.Column="0"
-            Content="Destination:"
+            Content="Country:"
             FontSize="20"
             VerticalAlignment="Center"
             Foreground="MintCream"/>
         <Label
             Grid.Row="2"
             Grid.Column="0"
-            Content="Orgin Country:"
+            Content="Destination:"
             FontSize="18"
             VerticalAlignment="Center"  
             Foreground="MintCream"/>
@@ -57,13 +57,13 @@
             VerticalAlignment="Center"  
             Foreground="MintCream"/>
         <ComboBox
-            x:Name="cbTravelDestination"
+            x:Name="cbCountry"
             Grid.Row="1"
             Grid.Column="1"
             Height="30"
             VerticalContentAlignment="Center"/>
         <TextBox
-            x:Name="txtOrginCountry"
+            x:Name="txtDestination"
             Grid.Row="2"
             Grid.Column="1"
             Height="30"

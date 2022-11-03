@@ -7,6 +7,7 @@ using TravelPal.Enums;
 
 namespace TravelPal.Travels;
 
+// Vacation class should inherit form Travel
 public class Vacation : Travel
 {
     public bool AllInclusive { get; set; }

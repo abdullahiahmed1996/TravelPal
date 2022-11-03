@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TravelPal.Enums
 {
+    //Populate the enum with the travel types
     public enum  TravelTypes
     {
         Vacation,

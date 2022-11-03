@@ -9,15 +9,13 @@ using TravelPal.Travels;
 
 namespace TravelPal.Manage;
 
-public  class User:IUser
+// User class should inherit form IUser
+public  class User : IUser
 {
     // Properteis
     public string Username { get; set; }
     public string Password { get; set; }
     public Countries Location { get; set; }
-
-    //public bool isAdmin { get; set; }
-
     public List<Travel> Travels { get; set; } = new();
 
     // Constuctor

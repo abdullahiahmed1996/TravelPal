@@ -22,7 +22,7 @@ namespace TravelPal
     {
         private UserManager userManager;
         
-
+        // prop for new password
         public string newPassword { get; set; }
 
 
@@ -43,20 +43,19 @@ namespace TravelPal
                 this.newPassword = newPassword;
             }
             else
-            {
+            {   // Waring message that pops up if the user entered a password that is too short
                 MessageBox.Show("The password should be at least 5 characters");
             }
 
             if(txtNewPassword.Text == txtConfirmPassword.Text)
             {
                 string newPassword = txtConfirmPassword.Text;
-                //userManager.SignedInUser.password = newPassword;
                 this.newPassword = newPassword;
                 Close();
 
             }
             else
-            {
+            {   // Waring message if the 2 passwords don't match
                 MessageBox.Show("The two passwords don't match","Warning!");
             }
 

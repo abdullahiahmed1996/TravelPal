@@ -10,9 +10,11 @@ namespace TravelPal.Travels;
 
 public class TravelManager
 {
+    // New list to hold the travels
     public List<Travel> Travels { get; set; } = new();
     UserManager userManager;
 
+    // Constructor
     public Travel AddTravel(string orginDestination, Countries country, int numOfTravellers,TripTypes tripTypes)
     {
         Trip trip = new(tripTypes, orginDestination, country, numOfTravellers);
@@ -20,6 +22,7 @@ public class TravelManager
         return trip;
     }
 
+    // Constructor
     public Travel AddTravel(bool allInclusive, string orginDestination, Countries country, int numOfTravellers)
     {
         Vacation vacation = new(orginDestination, country, numOfTravellers, allInclusive);
@@ -27,6 +30,7 @@ public class TravelManager
         return vacation;
     }
 
+    // Method that allows one to remove a travel
     public void RemoveTravel(Travel travelToRemove)
     {
         if(Travels.Contains(travelToRemove))

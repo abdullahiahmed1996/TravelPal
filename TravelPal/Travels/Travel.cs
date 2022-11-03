@@ -11,14 +11,12 @@ namespace TravelPal.Travels;
 
 public class Travel
 {
+    // Properties
     public Countries Country { get; set; }
     public int numOfTravellers { get; set; }
     public string Destination { get; set; }
-    
-    
 
-    //public int TravelDays { get; set; }
-
+    //Costuctor
     public Travel(string destination, Countries country, int numOfTravellers)
     {
         this.Destination = destination;
@@ -26,16 +24,19 @@ public class Travel
         this.numOfTravellers = numOfTravellers;
     }
 
+    // A virtual method that returns the country
     public virtual string GetInfo()
     {
         return $"{Country}";
     }
 
-   public virtual string GetTravelType()
+    // A virtual method that returns the travel type
+    public virtual string GetTravelType()
    {
         return "TravelType";
    }
 
+    // A virtual method that returns the travel info
     public virtual string GetTravelInfo()
     {
         return "TravelInfo";

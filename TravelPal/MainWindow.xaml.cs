@@ -23,6 +23,7 @@ namespace TravelPal
     /// </summary>
     public partial class MainWindow : Window
     {
+        // Field veriables
         UserManager userManager;
         TravelManager travelManager;
 
@@ -66,30 +67,31 @@ namespace TravelPal
         // Function for when signin button is click
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
         {
+            //List <IUser> users = userManager.Users;
             string username = txtUsername.Text;
             string password = pswPassword.Password;
             bool isFoundUser = false;
 
-            foreach(IUser user in userManager.Users)
+            foreach (IUser user in userManager.Users)
             {
-                if(user.Username == username && user.Password == password)
+                if (user.Username == username && user.Password == password)
                 {// log in
 
                     isFoundUser = true;
                     userManager.SignedInUser = user;
 
-                    TravelWindow travelWindow = new(userManager,travelManager);
+                    TravelWindow travelWindow = new(userManager, travelManager);
                     travelWindow.Show();
-                    Close();            
+                    Close();
                 }
-
-                    // If username or password was incorrect show a message box
-                if(!isFoundUser)
+            }
+                // If username or password was incorrect show a message box
+                if (!isFoundUser)
                 {
                      MessageBox.Show("Username or password is incorrect", "Warning");
                 }
 
-            }
+            
            
         }
     }
