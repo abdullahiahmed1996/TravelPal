@@ -110,4 +110,9 @@ public class UserManager : IUser
         return true;
     }
 
+    public List<IUser> GetAllTheUsers()
+    {
+        return Users;
+    }
+
 }

@@ -24,6 +24,7 @@ public partial class TravelDetailWindow : Window
     private readonly UserManager userManager;
     private readonly TravelManager travelManager;
     private readonly Travel travel;
+    // Constructor
     public TravelDetailWindow(UserManager userManager, TravelManager travelManager, Travel travel)
     {
         InitializeComponent();
@@ -34,6 +35,7 @@ public partial class TravelDetailWindow : Window
         UppdateDetails();
     }
 
+    // method that updates details
     private void UppdateDetails()
     {
         

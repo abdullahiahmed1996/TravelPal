@@ -40,7 +40,7 @@ namespace TravelPal
             {
                 string newUsername = txtNewUsername.Text;
 
-                //userManager.SignedInUser.username = newUsername;
+               
                 this.NewUsername = newUsername;
             }
             else
@@ -51,6 +51,7 @@ namespace TravelPal
             Close();
         }
 
+        // close the this window
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             Close();

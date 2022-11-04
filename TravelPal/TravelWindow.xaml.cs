@@ -148,12 +148,19 @@ public partial class TravelWindow : Window
 
             travelManager.RemoveTravel(selectedTravel);
 
-
-            if(userManager.SignedInUser is User)
+            foreach (IUser user in userManager.GetAllTheUsers())
             {
-                User signedInUser = userManager.SignedInUser as User;
-                signedInUser.Travels.Remove(selectedTravel);
-                userManager.SignedInUser = signedInUser;
+                if (user is User)
+                {
+
+                    User signedInUser = user as User;
+
+                    if(signedInUser.Travels.Contains(selectedTravel))
+                    {
+                        signedInUser.Travels.Remove(selectedTravel);
+                    }
+                    
+                }
             }
 
             UpdateWindow();

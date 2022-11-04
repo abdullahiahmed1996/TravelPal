@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TravelPal.Manage;
+using TravelPal.Travels;
 
 namespace TravelPal
 {
@@ -21,6 +22,7 @@ namespace TravelPal
     public partial class ChangePasswordWindow : Window
     {
         private UserManager userManager;
+        private TravelManager travelManager;
         
         // prop for new password
         public string newPassword { get; set; }
@@ -31,36 +33,42 @@ namespace TravelPal
         {
             InitializeComponent();
             this.userManager = userManager;
+            this.travelManager = travelManager;
 
         }
 
         // Function for when change password button is click
         public void btnChangePassword_Click(object sender, RoutedEventArgs e)
         {
-            if(txtNewPassword.Text.Length >= 5)
+            if(txtNewPassword.Text.Length >= 5 && txtNewPassword.Text == txtConfirmPassword.Text)
             {
                 string newPassword = txtNewPassword.Text;
                 this.newPassword = newPassword;
             }
             else
-            {   // Waring message that pops up if the user entered a password that is too short
-                MessageBox.Show("The password should be at least 5 characters");
+            {   
+                if(txtNewPassword.Text.Length < 5)
+                {
+                    // Waring message that pops up if the user entered a password that is too short
+                    MessageBox.Show("The password should be at least 5 characters");
+                }
+                else
+                {
+                    // Waring message if the 2 passwords don't match
+                    MessageBox.Show("The two passwords don't match", "Warning!");
+
+                }
+                
             }
 
-            if(txtNewPassword.Text == txtConfirmPassword.Text)
-            {
-                string newPassword = txtConfirmPassword.Text;
-                this.newPassword = newPassword;
-                Close();
+            Close();
 
-            }
-            else
-            {   // Waring message if the 2 passwords don't match
-                MessageBox.Show("The two passwords don't match","Warning!");
-            }
 
         }
-
-        
+        // close this window
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

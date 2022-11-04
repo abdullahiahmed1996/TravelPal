@@ -45,12 +45,9 @@ namespace TravelPal
             string password = pswPassword.Password;
             string country = cbCountry.SelectedItem as string;
 
-
-            //userManager.SignedInUser.username = newUsername;
-
-
             try
             {
+                // if either username, password or country is empty show custom message 
                 if (username.Count() == 0 || password.Count() == 0 || country.Count() == 0)
                 {
                     MessageBox.Show("Please fill in all the information!", "ERROR");
